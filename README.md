@@ -1,4 +1,7 @@
 # Whels-Proyecto-Finall
+## Hecho por:
+-Santiago Bazzani 
+-Daniel Forero
 
 ## Planeacion:
 - Vista: (Incluye como se planeo la parte visual del proyecto)
