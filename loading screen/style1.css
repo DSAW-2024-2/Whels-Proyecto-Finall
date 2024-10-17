@@ -10,7 +10,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: linear-gradient(to bottom right, #2f5061, rgb(25, 54, 40));
+    background-color: #2f5061;
     margin: 0;
 }
 
@@ -18,15 +18,22 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
+}
+
+.block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .text-left, .text-right {
-    margin: 0% !important;
     color: white;
     font-size: 4rem;
     letter-spacing: 0.2rem;
     font-weight: bold;
     margin: 0 10px;
+    font-family: 'Fugaz One', cursive;
 }
 
 .logo {
@@ -34,13 +41,46 @@ body {
     height: auto;
 }
 
+/* Nueva animación */
+.scale-in-hor-center {
+    -webkit-animation: scale-in-hor-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+            animation: scale-in-hor-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@-webkit-keyframes scale-in-hor-center {
+  0% {
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+    opacity: 1;
+  }
+}
+
+@keyframes scale-in-hor-center {
+  0% {
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+    opacity: 1;
+  }
+}
+
+/* Responsividad */
 @media (max-width: 768px) {
     .text-left, .text-right {
         font-size: 3rem;
     }
 
     .logo {
-        width: 80px; /* Reduce el tamaño del logo en pantallas más pequeñas */
+        width: 80px;
     }
 }
 
@@ -50,6 +90,6 @@ body {
     }
 
     .logo {
-        width: 60px; /* Ajusta el tamaño del logo en pantallas pequeñas */
+        width: 60px;
     }
 }
