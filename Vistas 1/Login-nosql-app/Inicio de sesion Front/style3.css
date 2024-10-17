@@ -27,15 +27,22 @@ body {
     margin-bottom: 20px;
     font-size: 24px;
     color: black;
-    display: flex;
+    display: flex; /* Esto asegura que la imagen y el texto se alineen horizontalmente */
     justify-content: center;
     align-items: center;
 }
 
 #login-form h2:before {
-    content: url(/assets/images/Logo.png); /* Ruta del icono */
-    margin-right: 10px;
+    content: '';
+    background-image: url('/assets/images/Logo.png'); /* Asegúrate de poner la ruta correcta de la imagen */
+    background-size: contain; 
+    background-repeat: no-repeat;
+    width: 40px; /* Ajusta el tamaño según la imagen */
+    height: 40px; /* Ajusta el tamaño según la imagen */
+    display: inline-block;
+    margin-right: 10px; /* Espacio entre la imagen y el texto */
 }
+
 
 input[type="text"],
 input[type="password"] {
