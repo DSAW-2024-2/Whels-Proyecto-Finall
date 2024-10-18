@@ -1,3 +1,38 @@
+/* Nueva animación */
+@-webkit-keyframes scale-in-hor-center {
+    0% {
+        -webkit-transform: scaleX(0);
+                transform: scaleX(0);
+        -webkit-transform-origin: 50% 50%;
+                transform-origin: 50% 50%;
+    }
+    100% {
+        -webkit-transform: scaleX(1);
+                transform: scaleX(1);
+        -webkit-transform-origin: 50% 50%;
+                transform-origin: 50% 50%;
+    }
+}
+@keyframes scale-in-hor-center {
+    0% {
+        -webkit-transform: scaleX(0);
+                transform: scaleX(0);
+        -webkit-transform-origin: 50% 50%;
+                transform-origin: 50% 50%;
+    }
+    100% {
+        -webkit-transform: scaleX(1);
+                transform: scaleX(1);
+        -webkit-transform-origin: 50% 50%;
+                transform-origin: 50% 50%;
+    }
+}
+
+.scale-in-hor-center {
+    -webkit-animation: scale-in-hor-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+            animation: scale-in-hor-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -21,13 +56,15 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 300px;
     text-align: center;
+    animation: scale-in-hor-center 0.5s ease-out; /* Aplica la animación */
 }
 
 #login-form h2 {
     margin-bottom: 20px;
+    font-family: 'Fugaz One', cursive;
     font-size: 24px;
     color: black;
-    display: flex; /* Esto asegura que la imagen y el texto se alineen horizontalmente */
+    display: flex;
     justify-content: center;
     align-items: center;
 }
@@ -35,14 +72,13 @@ body {
 #login-form h2:before {
     content: '';
     background-image: url('/assets/images/Logo.png'); /* Asegúrate de poner la ruta correcta de la imagen */
-    background-size: contain; 
+    background-size: contain;
     background-repeat: no-repeat;
-    width: 40px; /* Ajusta el tamaño según la imagen */
-    height: 40px; /* Ajusta el tamaño según la imagen */
+    width: 40px;
+    height: 40px;
     display: inline-block;
-    margin-right: 10px; /* Espacio entre la imagen y el texto */
+    margin-right: 10px;
 }
-
 
 input[type="text"],
 input[type="password"] {
