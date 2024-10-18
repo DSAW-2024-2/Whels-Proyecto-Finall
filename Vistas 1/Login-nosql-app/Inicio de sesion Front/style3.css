@@ -53,10 +53,16 @@ body {
     background-color: #dcdcdc; /* Fondo de la tarjeta */
     padding: 30px;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.747);
     width: 300px;
     text-align: center;
     animation: scale-in-hor-center 0.5s ease-out; /* Aplica la animación */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave */
+}
+
+.login-container:hover {
+    transform: scale(1.05); /* Aumenta el tamaño un 5% */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* Sombra más fuerte al hacer hover */
 }
 
 /* Nueva sección para la imagen del logo y el texto de bienvenida */
