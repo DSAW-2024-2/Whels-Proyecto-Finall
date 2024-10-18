@@ -59,25 +59,24 @@ body {
     animation: scale-in-hor-center 0.5s ease-out; /* Aplica la animación */
 }
 
-#login-form h2 {
-    margin-bottom: 20px;
-    font-family: 'Fugaz One', cursive;
-    font-size: 24px;
-    color: black;
+/* Nueva sección para la imagen del logo y el texto de bienvenida */
+.logo-container {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 20px;
 }
 
-#login-form h2:before {
-    content: '';
-    background-image: url('/assets/images/Logo.png'); /* Asegúrate de poner la ruta correcta de la imagen */
-    background-size: contain;
-    background-repeat: no-repeat;
-    width: 40px;
-    height: 40px;
-    display: inline-block;
-    margin-right: 10px;
+.logo {
+    width: 20%; /* Ajusta el tamaño del logo */
+    height: 20%;
+    margin-right: 5px; /* Espacio entre el logo y el texto */
+}
+
+#login-form h2 {
+    font-family: 'Fugaz One', cursive;
+    font-size: 24px;
+    color: black;
 }
 
 input[type="text"],
