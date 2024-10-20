@@ -42,7 +42,7 @@ body {
 }
 
 .jello-horizontal {
-    animation: jello-horizontal 3.5s ease-in-out infinite; 
+    animation: jello-horizontal 2.5s ease-in-out infinite; 
     transform-origin: center;
 }
 
