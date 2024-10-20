@@ -41,9 +41,8 @@ body {
     height: auto;
 }
 
-/* Animación continua sin pausa */
 .jello-horizontal {
-    animation: jello-horizontal 2.8s ease-in-out infinite;
+    animation: jello-horizontal 3.5s ease-in-out infinite; 
     transform-origin: center;
 }
 
@@ -67,9 +66,10 @@ body {
         transform: scale3d(1.05, 0.95, 1);
     }
     100% {
-        transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1); 
     }
 }
+
 
 /* Responsividad */
 @media (max-width: 768px) {
