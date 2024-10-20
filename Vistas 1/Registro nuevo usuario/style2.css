@@ -1,0 +1,133 @@
+/* Nueva animación */
+@-webkit-keyframes scale-in-hor-center {
+    0% {
+        -webkit-transform: scaleX(0);
+                transform: scaleX(0);
+        -webkit-transform-origin: 50% 50%;
+                transform-origin: 50% 50%;
+    }
+    100% {
+        -webkit-transform: scaleX(1);
+                transform: scaleX(1);
+        -webkit-transform-origin: 50% 50%;
+                transform-origin: 50% 50%;
+    }
+}
+@keyframes scale-in-hor-center {
+    0% {
+        -webkit-transform: scaleX(0);
+                transform: scaleX(0);
+        -webkit-transform-origin: 50% 50%;
+                transform-origin: 50% 50%;
+    }
+    100% {
+        -webkit-transform: scaleX(1);
+                transform: scaleX(1);
+        -webkit-transform-origin: 50% 50%;
+                transform-origin: 50% 50%;
+    }
+}
+
+.scale-in-hor-center {
+    -webkit-animation: scale-in-hor-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+            animation: scale-in-hor-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to bottom right, #2f5061, rgb(25, 54, 40));
+    margin: 0;
+}
+
+.register-container {
+    background-color: #dcdcdc; /* Fondo de la tarjeta */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.747);
+    width: 300px;
+    text-align: center;
+    animation: scale-in-hor-center 0.5s ease-out; /* Aplica la animación */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave */
+}
+
+.register-container:hover {
+    transform: scale(1.05); /* Aumenta el tamaño un 5% */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* Sombra más fuerte al hacer hover */
+}
+
+/* Nueva sección para la imagen del logo y el encabezado */
+.register-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    font-family: 'Fugaz One', cursive;
+}
+
+.register-icon {
+    width: 40px; /* Ajusta el tamaño del icono */
+    height: auto;
+    margin-right: 10px;
+}
+
+.register-header h2 {
+    font-family: 'Fugaz One', cursive;
+    font-size: 24px;
+    color: black;
+    margin: 0;
+}
+
+/* Estilo de los inputs */
+input[type="text"],
+input[type="tel"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+/* Estilo del botón */
+button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+button[type="submit"]:hover {
+    background-color: #444;
+}
+
+/* Estilo de los enlaces */
+p {
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+p a {
+    color: #333;
+    text-decoration: none;
+}
+
+p a:hover {
+    text-decoration: underline;
+}
