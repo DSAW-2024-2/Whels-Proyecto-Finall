@@ -18,14 +18,13 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* Removido overflow: hidden para evitar recortes */
 }
 
 .block {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px; /* Añadido para dar más espacio alrededor */
+    padding: 20px;
 }
 
 .text-left, .text-right {
@@ -42,74 +41,47 @@ body {
     height: auto;
 }
 
-/* Nueva animación: jello-horizontal */
+/* Animación: jello-horizontal con pausa */
 .jello-horizontal {
-    -webkit-animation: jello-horizontal 1.5s both;
-            animation: jello-horizontal 1.5s both;
-    -webkit-transform-origin: center; /* Evitar distorsión de las palabras */
+    -webkit-animation: jello-horizontal 1.5s ease-in-out infinite;
+            animation: jello-horizontal 1.5s ease-in-out infinite;
+    -webkit-transform-origin: center;
             transform-origin: center;
-}
-
-@-webkit-keyframes jello-horizontal {
-  0% {
-    -webkit-transform: scale3d(1, 1, 1);
-            transform: scale3d(1, 1, 1);
-  }
-  30% {
-    -webkit-transform: scale3d(1.25, 0.75, 1);
-            transform: scale3d(1.25, 0.75, 1);
-  }
-  40% {
-    -webkit-transform: scale3d(0.75, 1.25, 1);
-            transform: scale3d(0.75, 1.25, 1);
-  }
-  50% {
-    -webkit-transform: scale3d(1.15, 0.85, 1);
-            transform: scale3d(1.15, 0.85, 1);
-  }
-  65% {
-    -webkit-transform: scale3d(0.95, 1.05, 1);
-            transform: scale3d(0.95, 1.05, 1);
-  }
-  75% {
-    -webkit-transform: scale3d(1.05, 0.95, 1);
-            transform: scale3d(1.05, 0.95, 1);
-  }
-  100% {
-    -webkit-transform: scale3d(1, 1, 1);
-            transform: scale3d(1, 1, 1);
-  }
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-duration: 2.8s; /* Total incluye la pausa */
 }
 
 @keyframes jello-horizontal {
-  0% {
-    -webkit-transform: scale3d(1, 1, 1);
-            transform: scale3d(1, 1, 1);
-  }
-  30% {
-    -webkit-transform: scale3d(1.25, 0.75, 1);
-            transform: scale3d(1.25, 0.75, 1);
-  }
-  40% {
-    -webkit-transform: scale3d(0.75, 1.25, 1);
-            transform: scale3d(0.75, 1.25, 1);
-  }
-  50% {
-    -webkit-transform: scale3d(1.15, 0.85, 1);
-            transform: scale3d(1.15, 0.85, 1);
-  }
-  65% {
-    -webkit-transform: scale3d(0.95, 1.05, 1);
-            transform: scale3d(0.95, 1.05, 1);
-  }
-  75% {
-    -webkit-transform: scale3d(1.05, 0.95, 1);
-            transform: scale3d(1.05, 0.95, 1);
-  }
-  100% {
-    -webkit-transform: scale3d(1, 1, 1);
-            transform: scale3d(1, 1, 1);
-  }
+    0% {
+        transform: scale3d(1, 1, 1);
+    }
+    30% {
+        transform: scale3d(1.25, 0.75, 1);
+    }
+    40% {
+        transform: scale3d(0.75, 1.25, 1);
+    }
+    50% {
+        transform: scale3d(1.15, 0.85, 1);
+    }
+    65% {
+        transform: scale3d(0.95, 1.05, 1);
+    }
+    75% {
+        transform: scale3d(1.05, 0.95, 1);
+    }
+    100% {
+        transform: scale3d(1, 1, 1);
+    }
+
+    /* Pausa después de la animación */
+    100% {
+        transform: scale3d(1, 1, 1);
+    }
+    100% {
+        transform: scale3d(1, 1, 1);
+    }
 }
 
 /* Responsividad */
