@@ -41,15 +41,10 @@ body {
     height: auto;
 }
 
-/* Animación: jello-horizontal con pausa */
+/* Animación continua sin pausa */
 .jello-horizontal {
-    -webkit-animation: jello-horizontal 1.5s ease-in-out infinite;
-            animation: jello-horizontal 1.5s ease-in-out infinite;
-    -webkit-transform-origin: center;
-            transform-origin: center;
-    animation-delay: 0s;
-    animation-iteration-count: infinite;
-    animation-duration: 2.8s; /* Total incluye la pausa */
+    animation: jello-horizontal 2.8s ease-in-out infinite;
+    transform-origin: center;
 }
 
 @keyframes jello-horizontal {
@@ -70,14 +65,6 @@ body {
     }
     75% {
         transform: scale3d(1.05, 0.95, 1);
-    }
-    100% {
-        transform: scale3d(1, 1, 1);
-    }
-
-    /* Pausa después de la animación */
-    100% {
-        transform: scale3d(1, 1, 1);
     }
     100% {
         transform: scale3d(1, 1, 1);
