@@ -3,6 +3,10 @@
 -Santiago Bazzani 
 -Daniel Forero
 
+## Despliege:
+- Despliegue (Frontend): https://dsaw-2024-2.github.io/Whels-Proyecto-Finall/
+- Despliegue (Backend):
+
 ## Planeacion:
 - Vista: (Incluye como se planeo la parte visual del proyecto)
   https://www.figma.com/design/yskXCrfgkjMfSmKtxwYe4x/Untitled?node-id=0-1&t=Oz7rcop0gK0QScIF-1
