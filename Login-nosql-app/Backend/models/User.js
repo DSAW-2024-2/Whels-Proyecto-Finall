@@ -4,9 +4,12 @@ const bcrypt = require('bcrypt');
 // Definir el esquema del usuario
 const userSchema = new mongoose.Schema({
   username: { type: String, required: true, unique: true },
+  lastname: { type: String, required: true }, // Agregado
+  studentId: { type: String, required: true, unique: true }, // Agregado
+  phone: { type: String, required: true }, // Agregado
   password: { type: String, required: true },
   // Lista de coches asociados al usuario
-  cars: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Car' }]  // Relación con coches
+  cars: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Car' }]
 });
 
 // Hashing de contraseña antes de guardar

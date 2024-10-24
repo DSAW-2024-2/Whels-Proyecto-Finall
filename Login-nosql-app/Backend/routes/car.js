@@ -16,19 +16,19 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage });
 
 // Registro de coche
-router.post('/register', upload.single('foto'), async (req, res) => {
+router.post('/register', upload.single('carImage'), async (req, res) => { // Corregido el campo para la imagen
     try {
-        const user = await User.findOne({ username: req.body.username }); // Usuario al que se asociará el coche
+        const user = await User.findById(req.session.userId); // Encontrar el usuario en la sesión
         if (!user) return res.status(400).send('Usuario no encontrado');
         
         const newCar = new Car({
-            placa: req.body.placa,
-            foto: req.file.path, // Ruta de la foto
-            capacidad: req.body.capacidad,
-            soat: req.body.soat,
-            marca: req.body.marca,
-            modelo: req.body.modelo,
-            usuario: user._id
+            licensePlate: req.body.licensePlate,
+            carImage: req.file.path, // Ruta de la foto
+            capacity: req.body.capacity,
+            soatNumber: req.body.soatNumber,
+            brand: req.body.brand,
+            model: req.body.model,
+            owner: user._id
         });
         await newCar.save();
         res.send('Coche registrado exitosamente');

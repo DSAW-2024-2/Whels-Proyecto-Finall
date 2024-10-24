@@ -1,9 +1,7 @@
 require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
-const bodyParser = require('body-parser');
-const bcrypt = require('bcrypt');
-const multer = require('multer');
+const session = require('express-session');
 const path = require('path');
 const authRoutes = require('./routes/auth');
 const carRoutes = require('./routes/car');
@@ -11,15 +9,18 @@ const carRoutes = require('./routes/car');
 const app = express();
 const port = 3000;
 
-// Middleware
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
-app.use(express.static(path.join(__dirname, '../frontend')));
+// Configurar middleware de sesión
+app.use(session({
+    secret: 'mi-secreto',
+    resave: false,
+    saveUninitialized: true
+}));
 
-// Agrega este console.log para verificar si MONGO_URI está definida
-console.log('Mongo URI:', process.env.MONGO_URI);
+// Middleware para manejar peticiones POST
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
-// Conexión a MongoDB Atlas
+// Conectar a MongoDB usando Mongoose
 mongoose.connect(process.env.MONGO_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true
@@ -27,11 +28,19 @@ mongoose.connect(process.env.MONGO_URI, {
 .then(() => console.log('Conectado a MongoDB Atlas'))
 .catch(err => console.error('Error al conectar a MongoDB Atlas:', err));
 
-// Rutas
-app.use('/auth', authRoutes);
-app.use('/car', carRoutes);
+// Rutas para los archivos estáticos del frontend (HTML, CSS, JS)
+app.use(express.static(path.join(__dirname, '../frontend')));
+
+// Ruta para la pantalla de carga
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, '../loading screen/index1.html'));
+});
+
+// Incluir rutas para autenticación y manejo de coches
+app.use('/auth', authRoutes); // Rutas para login
+app.use('/car', carRoutes);   // Rutas para coches
 
 // Iniciar servidor
 app.listen(port, () => {
-    console.log(`Servidor escuchando en http://localhost:${port}`);
+    console.log(`Servidor corriendo en http://localhost:${port}`);
 });

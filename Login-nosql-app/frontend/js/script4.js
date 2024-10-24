@@ -1,15 +1,56 @@
 document.getElementById('car-register-form').addEventListener('submit', async function(e) {
     e.preventDefault();
 
-    const formData = new FormData();
-    formData.append('username', document.getElementById('username').value);
-    formData.append('placa', document.getElementById('placa').value);
-    formData.append('foto', document.getElementById('foto').files[0]);
-    formData.append('capacidad', document.getElementById('capacidad').value);
-    formData.append('soat', document.getElementById('soat').value);
-    formData.append('marca', document.getElementById('marca').value);
-    formData.append('modelo', document.getElementById('modelo').value);
+    const username = document.getElementById('username').value;
+    const placa = document.getElementById('placa').value;
+    const foto = document.getElementById('foto').files[0];
+    const capacidad = document.getElementById('capacidad').value;
+    const soat = document.getElementById('soat').value;
+    const marca = document.getElementById('marca').value;
+    const modelo = document.getElementById('modelo').value;
 
+    // Validación de la placa (solo letras y números)
+    const placaPattern = /^[A-Za-z0-9]+$/;
+    if (!placaPattern.test(placa)) {
+        alert("La placa del vehículo solo debe contener letras y números");
+        return;
+    }
+
+    // Validación de la capacidad (solo números)
+    if (isNaN(capacidad) || capacidad <= 0) {
+        alert("La capacidad del vehículo debe ser un número válido mayor que 0");
+        return;
+    }
+
+    // Validación del número de SOAT (solo letras y números)
+    const soatPattern = /^[A-Za-z0-9]+$/;
+    if (!soatPattern.test(soat)) {
+        alert("El número de SOAT solo debe contener letras y números");
+        return;
+    }
+
+    // Validación de la marca y el modelo (solo letras)
+    const marcaModeloPattern = /^[A-Za-z]+$/;
+    if (!marcaModeloPattern.test(marca)) {
+        alert("La marca solo debe contener letras");
+        return;
+    }
+    if (!marcaModeloPattern.test(modelo)) {
+        alert("El modelo solo debe contener letras");
+        return;
+    }
+
+    // Crear el objeto FormData para enviar los datos del formulario
+    const formData = new FormData();
+    formData.append('username', username);
+    formData.append('placa', placa);
+    formData.append('foto', foto);
+    formData.append('capacidad', capacidad);
+    formData.append('soat', soat);
+    formData.append('marca', marca);
+    formData.append('modelo', modelo);
+
+    // Enviar los datos al servidor
     const response = await fetch('/car/register', {
         method: 'POST',
         body: formData

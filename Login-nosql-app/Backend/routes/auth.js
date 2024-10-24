@@ -9,7 +9,7 @@ router.post('/register', async (req, res) => {
         const hashedPassword = await bcrypt.hash(req.body.password, 10);
         const newUser = new User({
             username: req.body.username,
-            lastname: req.body.lastname,
+            lastname: req.body.lastname,  // Asegúrate de incluir estos campos
             studentId: req.body.studentId,
             phone: req.body.phone,
             password: hashedPassword
@@ -30,6 +30,7 @@ router.post('/login', async (req, res) => {
         const validPassword = await bcrypt.compare(req.body.password, user.password);
         if (!validPassword) return res.status(400).send('Contraseña incorrecta');
 
+        req.session.userId = user._id;  // Guardamos el userId en la sesión
         res.send('Inicio de sesión exitoso');
     } catch (error) {
         res.status(500).send('Error del servidor');
