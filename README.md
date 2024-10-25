@@ -5,7 +5,7 @@
 
 ## Despliege:
 - Despliegue (Frontend): https://dsaw-2024-2.github.io/Whels-Proyecto-Finall/
-- Despliegue (Backend):
+- Despliegue (Backend): https://bakend-proyectofinal.vercel.app/
 
 ## Planeacion:
 - Vista: (Incluye como se planeo la parte visual del proyecto)
