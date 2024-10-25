@@ -18,20 +18,30 @@ document.getElementById('login-form').addEventListener('submit', async function(
     }
 
     // Si las validaciones son correctas, hacer el login
-    const response = await fetch('/auth/login', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ username, password })
-    });
+    try {
+        const response = await fetch('https://tu-backend-en-vercel.vercel.app/auth/login', {  // Cambia la URL al backend
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ username, password })
+        });
 
-    const result = await response.json();
+        const result = await response.json();
 
-    if (result.success) {
-        alert('Inicio de sesión exitoso');
-        // Aquí puedes redirigir o hacer algo después del inicio de sesión
-    } else {
-        alert(result.message || 'Error al iniciar sesión');
+        if (response.ok) {
+            alert('Inicio de sesión exitoso');
+            // Guardar el token si el backend lo devuelve (en caso de administradores)
+            if (result.token) {
+                localStorage.setItem('token', result.token);
+            }
+            // Redirigir o hacer algo después del inicio de sesión
+            window.location.href = "/index5.html";  // Redirige a otra página tras el login
+        } else {
+            alert(result.message || 'Error al iniciar sesión');
+        }
+    } catch (error) {
+        console.error('Error en la solicitud de inicio de sesión:', error);
+        alert('Hubo un problema con la solicitud. Intenta más tarde.');
     }
 });
