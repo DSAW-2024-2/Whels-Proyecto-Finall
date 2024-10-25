@@ -5,7 +5,7 @@ document.getElementById("register-form").addEventListener("submit", async functi
     const email = document.getElementById("email").value;
     const username = document.getElementById("username").value;
     const lastname = document.getElementById("lastname").value;
-    const studentId = document.getElementById("student-id").value;
+    const studentId = document.getElementById("universityId").value;
     const phone = document.getElementById("phone").value;
     const password = document.getElementById("password").value;
 
