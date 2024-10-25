@@ -2,43 +2,45 @@
 @-webkit-keyframes scale-in-hor-center {
     0% {
         -webkit-transform: scaleX(0);
-                transform: scaleX(0);
+        transform: scaleX(0);
         -webkit-transform-origin: 50% 50%;
-                transform-origin: 50% 50%;
+        transform-origin: 50% 50%;
     }
     100% {
         -webkit-transform: scaleX(1);
-                transform: scaleX(1);
+        transform: scaleX(1);
         -webkit-transform-origin: 50% 50%;
-                transform-origin: 50% 50%;
+        transform-origin: 50% 50%;
     }
 }
+
 @keyframes scale-in-hor-center {
     0% {
         -webkit-transform: scaleX(0);
-                transform: scaleX(0);
+        transform: scaleX(0);
         -webkit-transform-origin: 50% 50%;
-                transform-origin: 50% 50%;
+        transform-origin: 50% 50%;
     }
     100% {
         -webkit-transform: scaleX(1);
-                transform: scaleX(1);
+        transform: scaleX(1);
         -webkit-transform-origin: 50% 50%;
-                transform-origin: 50% 50%;
+        transform-origin: 50% 50%;
     }
 }
 
 .scale-in-hor-center {
-    -webkit-animation: scale-in-hor-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-            animation: scale-in-hor-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: scale-in-hor-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
+/* Reset default styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Center the form on the screen */
 body {
     font-family: Arial, sans-serif;
     display: flex;
@@ -46,89 +48,85 @@ body {
     align-items: center;
     height: 100vh;
     background: linear-gradient(to bottom right, #2f5061, rgb(25, 54, 40));
-    margin: 0;
 }
 
+/* Card container */
 .register-container {
-    background-color: #dcdcdc; /* Fondo de la tarjeta */
-    padding: 30px;
+    background-color: #dcdcdc;
+    padding: 25px; /* Reduced padding for smaller screens */
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.747);
-    width: 300px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.75);
+    width: 90%; /* Flexibility in width */
+    max-width: 300px;
     text-align: center;
-    animation: scale-in-hor-center 0.5s ease-out; /* Aplica la animación */
+    animation: scale-in-hor-center 0.5s ease-out;
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave */
 }
 
-.register-container:hover {
-    transform: scale(1.05); /* Aumenta el tamaño un 5% */
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* Sombra más fuerte al hacer hover */
+/* Responsiveness adjustments */
+@media (max-width: 480px) {
+    .register-header h2 {
+        font-size: 1.25rem; /* Smaller font size for mobile */
+    }
+
+    .register-icon {
+        width: 30px; /* Smaller icon size */
+    }
 }
 
-/* Nueva sección para la imagen del logo y el encabezado */
+/* Hover effect */
+.register-container:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Header with logo and title */
 .register-header {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 1rem; /* Adjusted margin */
     font-family: 'Fugaz One', cursive;
 }
 
 .register-icon {
-    width: 40px; /* Ajusta el tamaño del icono */
+    width: 40px;
     height: auto;
-    margin-right: 10px;
+    margin-right: 0.5rem;
 }
 
 .register-header h2 {
     font-family: 'Fugaz One', cursive;
-    font-size: 24px;
+    font-size: 1.375rem; /* Adjusted font size */
     color: black;
-    margin: 0;
 }
 
-/* Estilo de los inputs */
+/* Input fields */
 input[type="text"],
 input[type="tel"],
-input[type="password"],
-input[type="email"] {
+input[type="password"] {
     width: 100%;
-    padding: 10px;
-    margin: 10px 0;
+    padding: 0.5rem; /* Adjusted padding */
+    margin: 0.5rem 0; /* Reduced margin */
     border: 1px solid #ccc;
     border-radius: 5px;
-    box-sizing: border-box;
-    font-size: 14px;
+    font-size: 0.875rem;
 }
 
-/* Estilo del botón */
+/* Submit button */
 button[type="submit"] {
     width: 100%;
-    padding: 10px;
+    padding: 0.625rem;
     background-color: #333;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 16px;
-    margin-top: 10px;
+    font-size: 1rem;
+    margin-top: 0.625rem;
+    transition: background-color 0.3s; /* Transition for hover effect */
 }
 
 button[type="submit"]:hover {
-    background-color: #444;
-}
-
-/* Estilo de los enlaces */
-p {
-    margin-top: 20px;
-    font-size: 14px;
-}
-
-p a {
-    color: #333;
-    text-decoration: none;
-}
-
-p a:hover {
-    text-decoration: underline;
+    background-color: #444; /* Darken on hover */
 }

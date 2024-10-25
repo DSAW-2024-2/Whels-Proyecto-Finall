@@ -1,0 +1,147 @@
+/* Nueva animación */
+@-webkit-keyframes scale-in-hor-center {
+    0% {
+        -webkit-transform: scaleX(0);
+        transform: scaleX(0);
+        -webkit-transform-origin: 50% 50%;
+        transform-origin: 50% 50%;
+    }
+    100% {
+        -webkit-transform: scaleX(1);
+        transform: scaleX(1);
+        -webkit-transform-origin: 50% 50%;
+        transform-origin: 50% 50%;
+    }
+}
+
+@keyframes scale-in-hor-center {
+    0% {
+        -webkit-transform: scaleX(0);
+        transform: scaleX(0);
+        -webkit-transform-origin: 50% 50%;
+        transform-origin: 50% 50%;
+    }
+    100% {
+        -webkit-transform: scaleX(1);
+        transform: scaleX(1);
+        -webkit-transform-origin: 50% 50%;
+        transform-origin: 50% 50%;
+    }
+}
+
+.scale-in-hor-center {
+    animation: scale-in-hor-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to bottom right, #2f5061, rgb(25, 54, 40));
+}
+
+/* Card container */
+.register-container {
+    background-color: #dcdcdc; /* Fondo de la tarjeta */
+    padding: 20px; /* Ajustado para pantallas más pequeñas */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.747);
+    width: 90%; /* Flexibilidad en el ancho */
+    max-width: 300px; /* Limitar el ancho máximo */
+    text-align: center;
+    animation: scale-in-hor-center 0.5s ease-out; /* Aplica la animación */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave */
+}
+
+/* Hover effect for the card */
+.register-container:hover {
+    transform: scale(1.05); /* Aumenta el tamaño un 5% */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* Sombra más fuerte al hacer hover */
+}
+
+/* Sección para la imagen del logo y el texto de bienvenida */
+.register-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px; /* Ajustado para pantallas más pequeñas */
+}
+
+.register-icon {
+    width: 20%; /* Ajusta el tamaño del logo */
+    height: auto;
+    margin-right: 5px; /* Espacio entre el logo y el texto */
+}
+
+.register-header h2 {
+    font-family: 'Fugaz One', cursive;
+    font-size: 1.5rem; /* Ajustado para pantallas más pequeñas */
+    color: black;
+}
+
+/* Input fields */
+input[type="text"],
+input[type="tel"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/* Submit button */
+button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem; /* Ajustado para pantallas más pequeñas */
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #444;
+}
+
+/* Responsiveness adjustments */
+@media (max-width: 480px) {
+    .register-container {
+        padding: 15px; /* Menos padding en pantallas pequeñas */
+        width: 95%; /* Aumentar el ancho en pantallas pequeñas */
+    }
+
+    .register-header h2 {
+        font-size: 1.25rem; /* Ajustar el tamaño del texto en pantallas pequeñas */
+    }
+
+    .register-icon {
+        width: 30px; /* Reducir el tamaño del icono */
+    }
+
+    input[type="text"],
+    input[type="tel"],
+    input[type="password"] {
+        padding: 8px; /* Menos padding en los campos de entrada */
+    }
+
+    button[type="submit"] {
+        padding: 8px; /* Menos padding en el botón */
+        font-size: 0.9rem; /* Tamaño de fuente ajustado para el botón */
+    }
+}
