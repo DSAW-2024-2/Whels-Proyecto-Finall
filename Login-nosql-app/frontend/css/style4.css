@@ -53,11 +53,10 @@ body {
 /* Card container */
 .register-container {
     background-color: #dcdcdc; /* Fondo de la tarjeta */
-    padding: 20px; /* Ajustado para pantallas más pequeñas */
+    padding: 25px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.747);
-    width: 90%; /* Flexibilidad en el ancho */
-    max-width: 300px; /* Limitar el ancho máximo */
+    width: 300px;
     text-align: center;
     animation: scale-in-hor-center 0.5s ease-out; /* Aplica la animación */
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave */
@@ -74,7 +73,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 15px; /* Ajustado para pantallas más pequeñas */
+    margin-bottom: 20px;
 }
 
 .register-icon {
@@ -85,14 +84,13 @@ body {
 
 .register-header h2 {
     font-family: 'Fugaz One', cursive;
-    font-size: 1.5rem; /* Ajustado para pantallas más pequeñas */
+    font-size: 24px;
     color: black;
 }
 
 /* Input fields */
 input[type="text"],
-input[type="tel"],
-input[type="password"] {
+input[type="tel"] {
     width: 100%;
     padding: 10px;
     margin: 10px 0;
@@ -110,38 +108,11 @@ button[type="submit"] {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 1rem; /* Ajustado para pantallas más pequeñas */
+    font-size: 16px;
     margin-top: 10px;
     transition: background-color 0.3s ease;
 }
 
 button[type="submit"]:hover {
     background-color: #444;
-}
-
-/* Responsiveness adjustments */
-@media (max-width: 480px) {
-    .register-container {
-        padding: 15px; /* Menos padding en pantallas pequeñas */
-        width: 95%; /* Aumentar el ancho en pantallas pequeñas */
-    }
-
-    .register-header h2 {
-        font-size: 1.25rem; /* Ajustar el tamaño del texto en pantallas pequeñas */
-    }
-
-    .register-icon {
-        width: 30px; /* Reducir el tamaño del icono */
-    }
-
-    input[type="text"],
-    input[type="tel"],
-    input[type="password"] {
-        padding: 8px; /* Menos padding en los campos de entrada */
-    }
-
-    button[type="submit"] {
-        padding: 8px; /* Menos padding en el botón */
-        font-size: 0.9rem; /* Tamaño de fuente ajustado para el botón */
-    }
 }
