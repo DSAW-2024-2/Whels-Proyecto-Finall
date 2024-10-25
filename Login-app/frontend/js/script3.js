@@ -36,7 +36,7 @@ document.getElementById('login-form').addEventListener('submit', async function(
                 localStorage.setItem('token', result.token);
             }
             // Redirigir o hacer algo después del inicio de sesión
-            window.location.href = "/index5.html";  // Redirige a otra página tras el login
+            window.location.href = "/Login-app/frontend/html/Index5.html";  // Redirige a otra página tras el login
         } else {
             alert(result.message || 'Error al iniciar sesión');
         }
