@@ -1,0 +1,29 @@
+[
+  {
+    "username": "admin",
+    "lastName": "Administrador",
+    "email": "admin@empresa.com",
+    "universityId": "99999",
+    "phone": "1234567890",
+    "password": "$2a$10$...",
+    "isAdmin": true
+  },
+  {
+    "username": "santiago",
+    "lastName": "Apellido",
+    "email": "santiagobari@unisabana.edu.co",
+    "universityId": "310458",
+    "phone": "3053704482",
+    "password": "220626",
+    "isAdmin": false
+  },
+  {
+    "username": "usuario1",
+    "lastName": "Apellido",
+    "email": "usuario1@ejemplo.com",
+    "universityId": "1111",
+    "phone": "123456789",
+    "password": "$2a$10$IT18JsgXlyPyLTaGy7gQEuQVq1asGiu/42TT6aWUUnlzOc44WAuY.",
+    "isAdmin": false
+  }
+]
