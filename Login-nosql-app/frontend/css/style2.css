@@ -1,132 +1,131 @@
-/* Nueva animación */
+/* Global reset */
+* {
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    box-sizing: border-box; /* Include padding and border in total width and height */
+}
+
+/* Keyframes for scale-in animation */
 @-webkit-keyframes scale-in-hor-center {
     0% {
-        -webkit-transform: scaleX(0);
-        transform: scaleX(0);
-        -webkit-transform-origin: 50% 50%;
-        transform-origin: 50% 50%;
+        transform: scaleX(0); /* Start scale */
+        -webkit-transform-origin: 50% 50%; /* Transform origin */
+        transform-origin: 50% 50%; /* Transform origin */
     }
     100% {
-        -webkit-transform: scaleX(1);
-        transform: scaleX(1);
-        -webkit-transform-origin: 50% 50%;
-        transform-origin: 50% 50%;
+        transform: scaleX(1); /* End scale */
+        -webkit-transform-origin: 50% 50%; /* Transform origin */
+        transform-origin: 50% 50%; /* Transform origin */
     }
 }
 
 @keyframes scale-in-hor-center {
     0% {
-        -webkit-transform: scaleX(0);
-        transform: scaleX(0);
-        -webkit-transform-origin: 50% 50%;
-        transform-origin: 50% 50%;
+        transform: scaleX(0); /* Start scale */
+        -webkit-transform-origin: 50% 50%; /* Transform origin */
+        transform-origin: 50% 50%; /* Transform origin */
     }
     100% {
-        -webkit-transform: scaleX(1);
-        transform: scaleX(1);
-        -webkit-transform-origin: 50% 50%;
-        transform-origin: 50% 50%;
+        transform: scaleX(1); /* End scale */
+        -webkit-transform-origin: 50% 50%; /* Transform origin */
+        transform-origin: 50% 50%; /* Transform origin */
     }
 }
 
+/* Animation class */
 .scale-in-hor-center {
-    animation: scale-in-hor-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: scale-in-hor-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both; /* Animation properties */
 }
 
-/* Reset default styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Center the form on the screen */
+/* Body styles */
 body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background: linear-gradient(to bottom right, #2f5061, rgb(25, 54, 40));
+    font-family: Arial, sans-serif; /* Set font family */
+    display: flex; /* Use flexbox */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 100vh; /* Full viewport height */
+    background: linear-gradient(to bottom right, #2f5061, rgb(25, 54, 40)); /* Background gradient */
 }
 
 /* Card container */
 .register-container {
-    background-color: #dcdcdc;
-    padding: 25px; /* Reduced padding for smaller screens */
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.75);
-    width: 90%; /* Flexibility in width */
-    max-width: 300px;
-    text-align: center;
-    animation: scale-in-hor-center 0.5s ease-out;
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave */
+    background-color: #dcdcdc; /* Background color */
+    padding: 25px; /* Padding inside card */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.75); /* Shadow effect */
+    width: 90%; /* Responsive width */
+    max-width: 300px; /* Maximum width */
+    text-align: center; /* Center text */
+    animation: scale-in-hor-center 0.5s ease-out; /* Entrance animation */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+}
+
+/* Hover effect for the card */
+.register-container:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* Increase shadow on hover */
+}
+
+/* Header with logo and title */
+.register-header {
+    display: flex; /* Use flexbox */
+    justify-content: center; /* Center content */
+    align-items: center; /* Center content */
+    margin-bottom: 1rem; /* Margin below header */
+    font-family: 'Fugaz One', cursive; /* Custom font */
+}
+
+.register-icon {
+    width: 40px; /* Logo width */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 0.5rem; /* Space between icon and title */
+}
+
+/* Header title styles */
+.register-header h2 {
+    font-family: 'Fugaz One', cursive; /* Custom font */
+    font-size: 1.375rem; /* Title font size */
+    color: black; /* Title color */
+}
+
+/* Input field styles */
+input[type="text"],
+input[type="tel"],
+input[type="password"] {
+    width: 100%; /* Full width */
+    padding: 0.5rem; /* Padding inside inputs */
+    margin: 0.5rem 0; /* Margin between inputs */
+    border: 1px solid #ccc; /* Border style */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 0.875rem; /* Font size */
+}
+
+/* Submit button styles */
+button[type="submit"] {
+    width: 100%; /* Full width */
+    padding: 0.625rem; /* Padding inside button */
+    background-color: #333; /* Button background color */
+    color: white; /* Button text color */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 1rem; /* Button font size */
+    margin-top: 0.625rem; /* Margin above button */
+    transition: background-color 0.3s; /* Transition for hover effect */
+}
+
+/* Button hover effect */
+button[type="submit"]:hover {
+    background-color: #444; /* Darken background on hover */
 }
 
 /* Responsiveness adjustments */
 @media (max-width: 480px) {
     .register-header h2 {
-        font-size: 1.25rem; /* Smaller font size for mobile */
+        font-size: 1.25rem; /* Smaller font for mobile */
     }
 
     .register-icon {
-        width: 30px; /* Smaller icon size */
+        width: 30px; /* Smaller icon size for mobile */
     }
-}
-
-/* Hover effect */
-.register-container:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
-}
-
-/* Header with logo and title */
-.register-header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 1rem; /* Adjusted margin */
-    font-family: 'Fugaz One', cursive;
-}
-
-.register-icon {
-    width: 40px;
-    height: auto;
-    margin-right: 0.5rem;
-}
-
-.register-header h2 {
-    font-family: 'Fugaz One', cursive;
-    font-size: 1.375rem; /* Adjusted font size */
-    color: black;
-}
-
-/* Input fields */
-input[type="text"],
-input[type="tel"],
-input[type="password"] {
-    width: 100%;
-    padding: 0.5rem; /* Adjusted padding */
-    margin: 0.5rem 0; /* Reduced margin */
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 0.875rem;
-}
-
-/* Submit button */
-button[type="submit"] {
-    width: 100%;
-    padding: 0.625rem;
-    background-color: #333;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1rem;
-    margin-top: 0.625rem;
-    transition: background-color 0.3s; /* Transition for hover effect */
-}
-
-button[type="submit"]:hover {
-    background-color: #444; /* Darken on hover */
 }
