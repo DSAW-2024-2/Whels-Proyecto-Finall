@@ -51,7 +51,7 @@ body {
 }
 
 /* Card container */
-.register-container {
+.car-register-container {
     background-color: #dcdcdc; /* Fondo de la tarjeta */
     padding: 25px;
     border-radius: 10px;
@@ -63,7 +63,7 @@ body {
 }
 
 /* Hover effect for the card */
-.register-container:hover {
+.car-register-container:hover {
     transform: scale(1.05); /* Aumenta el tamaño un 5% */
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* Sombra más fuerte al hacer hover */
 }
@@ -90,7 +90,7 @@ body {
 
 /* Input fields */
 input[type="text"],
-input[type="tel"] {
+input[type="number"] {
     width: 100%;
     padding: 10px;
     margin: 10px 0;

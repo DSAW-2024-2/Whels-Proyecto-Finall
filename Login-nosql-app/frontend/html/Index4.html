@@ -3,24 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario de Registro</title>
+    <title>Registro de Coche</title>
     <link rel="stylesheet" href="/Login-nosql-app/frontend/css/style4.css">
     <link href="https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="register-container">
+    <div class="car-register-container scale-in-hor-center">
         <div class="register-card">
             <div class="register-header">
                 <img src="../assets/images/Logo.png" alt="Logo de registro" class="register-icon">
                 <h2>NUEVO CARRO</h2>
             </div>
-            <form id="register-form">
-                <input type="text" id="username" placeholder="Placa del vehiculo" required>
-                <input type="text" id="lastname" placeholder="Capacidad del vehiculo" required>
-                <input type="text" id="student-id" placeholder="Numero del SOAT" required>
-                <input type="tel" id="phone" placeholder="Marca" required>
-                <input type="password" id="password" placeholder="Modelo" required>
-                <button type="submit">Registrars</button>
+            <form id="car-register-form" enctype="multipart/form-data">
+                <input type="text" id="username" placeholder="Usuario" required><br>
+                <input type="text" id="placa" placeholder="Placa del Vehículo" required><br>
+                <input type="number" id="capacidad" placeholder="Capacidad del Vehículo" required><br>
+                <input type="text" id="soat" placeholder="Número de SOAT" required><br>
+                <input type="text" id="marca" placeholder="Marca" required><br>
+                <input type="text" id="modelo" placeholder="Modelo" required><br>
+                <button type="submit">Registrar Coche</button>
             </form>
         </div>
     </div>
