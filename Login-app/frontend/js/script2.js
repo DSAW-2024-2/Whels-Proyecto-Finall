@@ -69,7 +69,7 @@ document.getElementById("register-form").addEventListener("submit", async functi
         if (response.ok) {
             alert("Registro completado exitosamente");
             console.log('Usuario registrado exitosamente:', data);
-            window.location.href = "/index5.html";
+            window.location.href = "/Login-app/frontend/html/index5.html";
         } else {
             console.error('Error al registrar usuario:', data);
             alert('Error al registrar usuario. Intenta nuevamente.');
