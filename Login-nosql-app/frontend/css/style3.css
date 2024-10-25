@@ -60,6 +60,13 @@ body {
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave */
 }
 
+@media (max-width: 480px) { /* Ajuste para pantallas pequeñas */
+    .login-container {
+        width: 250px; /* Reduce el ancho para móviles */
+        padding: 20px; /* Ajusta el padding si es necesario */
+    }
+}
+
 .login-container:hover {
     transform: scale(1.05); /* Aumenta el tamaño un 5% */
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* Sombra más fuerte al hacer hover */
@@ -117,10 +124,11 @@ p {
 }
 
 p a {
-    color: #333;
+    color: #225286; /* Cambia el color a uno que prefieras */
     text-decoration: none;
 }
 
 p a:hover {
     text-decoration: underline;
+    color: #225286; /* Color cuando el enlace está en hover */
 }
