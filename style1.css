@@ -1,93 +1,85 @@
+/* Global reset */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
 }
 
+/* Body styles */
 body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background: linear-gradient(to bottom right, #2f5061, rgb(25, 54, 40));
-    margin: 0;
+    font-family: Arial, sans-serif; /* Set font family */
+    display: flex; /* Use flexbox */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 100vh; /* Full viewport height */
+    background: linear-gradient(to bottom right, #2f5061, rgb(25, 54, 40)); /* Background gradient */
 }
 
+/* Loading screen container */
 .loading-screen {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: flex; /* Use flexbox */
+    justify-content: center; /* Center content */
+    align-items: center; /* Center content */
 }
 
+/* Block styles */
 .block {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
+    display: flex; /* Use flexbox */
+    justify-content: center; /* Center content */
+    align-items: center; /* Center content */
+    padding: 20px; /* Padding around the block */
 }
 
+/* Text styles for left and right */
 .text-left, .text-right {
-    color: white;
-    font-size: 4rem;
-    letter-spacing: 0.2rem;
-    font-weight: bold;
-    margin: 0 10px;
-    font-family: 'Fugaz One', cursive;
+    color: white; /* Text color */
+    font-size: 4rem; /* Font size */
+    letter-spacing: 0.2rem; /* Space between letters */
+    font-weight: bold; /* Bold text */
+    margin: 0 10px; /* Margin between text and logo */
+    font-family: 'Fugaz One', cursive; /* Custom font */
 }
 
+/* Logo styles */
 .logo {
-    width: 120px;
-    height: auto;
+    width: 120px; /* Logo width */
+    height: auto; /* Maintain aspect ratio */
 }
 
+/* Animation for jello effect */
 .jello-horizontal {
-    animation: jello-horizontal 2.5s ease-in-out infinite; 
-    transform-origin: center;
+    animation: jello-horizontal 2.5s ease-in-out infinite; /* Animation properties */
+    transform-origin: center; /* Animation origin */
 }
 
+/* Keyframes for jello animation */
 @keyframes jello-horizontal {
-    0% {
-        transform: scale3d(1, 1, 1);
-    }
-    30% {
-        transform: scale3d(1.25, 0.75, 1);
-    }
-    40% {
-        transform: scale3d(0.75, 1.25, 1);
-    }
-    50% {
-        transform: scale3d(1.15, 0.85, 1);
-    }
-    65% {
-        transform: scale3d(0.95, 1.05, 1);
-    }
-    75% {
-        transform: scale3d(1.05, 0.95, 1);
-    }
-    100% {
-        transform: scale3d(1, 1, 1); 
-    }
+    0% { transform: scale3d(1, 1, 1); } /* Start state */
+    30% { transform: scale3d(1.25, 0.75, 1); } /* Expand horizontally */
+    40% { transform: scale3d(0.75, 1.25, 1); } /* Contract vertically */
+    50% { transform: scale3d(1.15, 0.85, 1); } /* Bounce effect */
+    65% { transform: scale3d(0.95, 1.05, 1); } /* Slight contraction */
+    75% { transform: scale3d(1.05, 0.95, 1); } /* Bounce back */
+    100% { transform: scale3d(1, 1, 1); } /* End state */
 }
 
-
-/* Responsividad */
+/* Responsiveness */
 @media (max-width: 768px) {
     .text-left, .text-right {
-        font-size: 3rem;
+        font-size: 3rem; /* Smaller font for tablets */
     }
 
     .logo {
-        width: 80px;
+        width: 80px; /* Smaller logo for tablets */
     }
 }
 
 @media (max-width: 480px) {
     .text-left, .text-right {
-        font-size: 2rem;
+        font-size: 2rem; /* Smaller font for mobile */
     }
 
     .logo {
-        width: 60px;
+        width: 60px; /* Smaller logo for mobile */
     }
 }
