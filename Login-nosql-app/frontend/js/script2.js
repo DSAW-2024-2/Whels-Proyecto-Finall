@@ -1,4 +1,4 @@
-document.getElementById("register-form").addEventListener("submit", function(event) {
+document.getElementById("register-form").addEventListener("submit", async function(event) {
     event.preventDefault();  // Evitar el envío del formulario hasta que todas las validaciones pasen
 
     // Obtener los valores de los campos del formulario
@@ -47,6 +47,34 @@ document.getElementById("register-form").addEventListener("submit", function(eve
         return;
     }
 
-    // Si todas las validaciones pasan, muestra un mensaje de éxito
-    alert("Registro completado exitosamente");
+    // Si todas las validaciones pasan, enviar los datos al backend
+    try {
+        const response = await fetch('https://tu-backend-en-vercel.vercel.app/auth/register', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                username,
+                lastName: lastname,
+                email,
+                universityId: studentId,
+                phone,
+                password,
+            }),
+        });
+
+        const data = await response.json();
+
+        if (response.ok) {
+            alert("Registro completado exitosamente");
+            console.log('Usuario registrado exitosamente:', data);
+        } else {
+            console.error('Error al registrar usuario:', data);
+            alert('Error al registrar usuario. Intenta nuevamente.');
+        }
+    } catch (error) {
+        console.error('Error al registrar usuario:', error);
+        alert('Hubo un problema con la solicitud. Intenta más tarde.');
+    }
 });
