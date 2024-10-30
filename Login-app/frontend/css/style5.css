@@ -1,0 +1,89 @@
+/* Global reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+    font-family: 'Fugaz One', cursive; /* Custom font */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to bottom right, #2f5061, #193628);
+    color: white;
+}
+
+/* Container for role selection */
+.role-selection-container {
+    background-color: #dcdcdc;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    width: 300px;
+    text-align: center;
+    animation: scale-in-hor-center 0.5s ease-out;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect for the container */
+.role-selection-container:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Title styles */
+h1 {
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Button styles */
+button {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Button color for conductor */
+#conductor {
+    background-color: #007bff; /* Green color */
+}
+
+#conductor:hover {
+    background-color: #1c5796; /* Darker green on hover */
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+/* Button color for pasajero */
+#pasajero {
+    background-color: #28a745; /* Blue color */
+}
+
+#pasajero:hover {
+    background-color: #27813c; /* Darker blue on hover */
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+/* Keyframes for animation */
+@keyframes scale-in-hor-center {
+    0% {
+        transform: scaleX(0);
+        transform-origin: 50% 50%;
+    }
+    100% {
+        transform: scaleX(1);
+        transform-origin: 50% 50%;
+    }
+}
