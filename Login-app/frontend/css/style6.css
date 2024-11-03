@@ -6,7 +6,22 @@
 
 body {
     font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom right, #2f5061, #193628);
+    background-size: cover; /* Asegura que el fondo cubra toda la pantalla */
+    background-attachment: fixed; /* Fija el fondo en su posición */
     overflow-x: hidden;
+}
+
+
+.card-container {
+    width: 90%;
+    max-width: 800px;
+    min-height: 800px;
+    margin: 20px auto; /* Centrar la tarjeta en la pantalla */
+    padding: 20px;
+    background-color: #ffffff; /* Color de fondo blanco para la tarjeta */
+    border-radius: 15px; /* Bordes redondeados */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra para la tarjeta */
 }
 
 header {
@@ -16,6 +31,7 @@ header {
     background-color: #2A557B;
     padding: 10px;
     color: #fff;
+    border-radius: 15px 15px 0 0; /* Bordes redondeados en la parte superior */
 }
 
 .menu-icon, .user-icon {
@@ -40,7 +56,7 @@ main {
 .car-image {
     background-color: #2A557B;
     padding: 20px;
-    border-radius: 0 0 50% 50%;
+    border-radius: 0 0 50% 50%; /* Bordes redondeados en la parte inferior */
     color: #fff;
 }
 
@@ -81,6 +97,7 @@ main {
     flex-direction: column;
     justify-content: space-between;
     transition: transform 0.3s ease;
+    z-index: 1000; /* Asegurar que el menú esté por encima de otros elementos */
 }
 
 .menu ul {
