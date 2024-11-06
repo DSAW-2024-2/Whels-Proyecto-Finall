@@ -5,23 +5,23 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Fugaz One', cursive !important;
     background: linear-gradient(to bottom right, #2f5061, #193628);
-    background-size: cover; /* Asegura que el fondo cubra toda la pantalla */
-    background-attachment: fixed; /* Fija el fondo en su posición */
+    background-size: cover;
+    background-attachment: fixed;
     overflow-x: hidden;
 }
 
-
 .card-container {
+    position: relative;
     width: 90%;
     max-width: 800px;
-    min-height: 800px;
-    margin: 20px auto; /* Centrar la tarjeta en la pantalla */
+    margin: 20px auto;
     padding: 20px;
-    background-color: #ffffff; /* Color de fondo blanco para la tarjeta */
-    border-radius: 15px; /* Bordes redondeados */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra para la tarjeta */
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
 }
 
 header {
@@ -31,7 +31,8 @@ header {
     background-color: #2A557B;
     padding: 10px;
     color: #fff;
-    border-radius: 15px 15px 0 0; /* Bordes redondeados en la parte superior */
+    border-radius: 15px 15px 0 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .menu-icon, .user-icon {
@@ -56,8 +57,10 @@ main {
 .car-image {
     background-color: #2A557B;
     padding: 20px;
-    border-radius: 0 0 50% 50%; /* Bordes redondeados en la parte inferior */
+    border-radius: 0 0 15px 15px;
     color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    margin-top: 20px;
 }
 
 .car-image img {
@@ -65,10 +68,15 @@ main {
     height: auto;
 }
 
+.car-image p {
+    margin-top: 10px;
+    font-size: 16px;
+}
+
 .actions {
     display: flex;
     justify-content: space-around;
-    margin-top: 20px;
+    margin-top: 30px;
 }
 
 .action {
@@ -85,46 +93,58 @@ main {
 
 /* Estilos para los menús desplegables */
 .menu {
-    background-color: rgba(27, 43, 60, 0.9); /* Fondo semi-transparente */
-    width: 60%;
-    max-width: 250px;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    padding-top: 50px;
+    position: absolute;
+    background-color: rgba(27, 43, 60, 0.9);
+    width: 45%; /* Ancho reducido */
+    max-width: 180px; /* Ancho máximo reducido */
+    padding: 15px; /* Padding reducido */
     color: #fff;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     transition: transform 0.3s ease;
-    z-index: 1000; /* Asegurar que el menú esté por encima de otros elementos */
+    z-index: 10;
+    border-radius: 10px; /* Bordes redondeados más pequeños */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Posición específica para cada menú */
+.left-menu {
+    top: 40px;
+    left: 5px;
+    transform: translateX(-120%);
+}
+
+.right-menu {
+    top: 40px;
+    right: 5px;
+    transform: translateX(120%);
 }
 
 .menu ul {
     list-style: none;
-    padding-left: 20px;
+    padding-left: 0;
 }
 
 .menu li {
     display: flex;
     align-items: center;
-    padding: 15px;
-    font-size: 18px;
+    padding: 10px; /* Padding reducido */
+    font-size: 16px; /* Fuente más pequeña */
 }
 
 .menu li span {
-    margin-right: 10px;
-    font-size: 24px;
+    margin-right: 8px; /* Margen reducido */
+    font-size: 20px; /* Iconos más pequeños */
 }
 
 .menu .actions {
-    padding: 20px;
+    padding: 15px; /* Padding reducido */
     text-align: center;
 }
 
 button {
-    padding: 10px 15px;
-    font-size: 16px;
+    padding: 8px 12px; /* Botones más pequeños */
+    font-size: 14px; /* Fuente más pequeña */
     border: none;
     background-color: #2A557B;
     color: #fff;
@@ -137,25 +157,11 @@ button:hover {
     background-color: #3D6A92;
 }
 
-/* Ocultar menús inicialmente */
-.hidden {
-    transform: translateX(-100%);
-}
-
-/* Menú de navegación desde la izquierda */
-.left-menu.hidden {
-    transform: translateX(-100%);
-}
-.left-menu {
-    left: 0;
+/* Mostrar los menús cuando se activan */
+.left-menu.show {
     transform: translateX(0);
 }
 
-/* Menú de usuario desde la derecha */
-.right-menu.hidden {
-    transform: translateX(100%);
-}
-.right-menu {
-    right: 0;
+.right-menu.show {
     transform: translateX(0);
 }
