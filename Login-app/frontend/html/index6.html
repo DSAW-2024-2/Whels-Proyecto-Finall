@@ -14,7 +14,6 @@
             <h1>WHEELS <span>Pasajeros</span></h1>
             <div class="user-icon" onclick="toggleMenu('userMenu')">👤</div>
         </header>
-    
         <main>
             <div class="car-image">
                 <img src="../assets/images/city-car-front-view-4490d2.webp" alt="Imagen de auto">
@@ -31,7 +30,7 @@
                 </div>
             </div>
         </main>
-    
+
         <!-- Menú de navegación -->
         <aside id="navMenu" class="menu left-menu">
             <ul>
@@ -41,7 +40,7 @@
                 <li><span>🏠</span> Home</li>
             </ul>
         </aside>
-    
+
         <!-- Menú de usuario -->
         <aside id="userMenu" class="menu right-menu">
             <ul>
@@ -63,7 +62,6 @@
             menu.classList.toggle('show');
         }
 
-        // Función para cerrar los menús si se hace clic fuera de ellos
         document.addEventListener('click', function(event) {
             const navMenu = document.getElementById('navMenu');
             const userMenu = document.getElementById('userMenu');
@@ -72,7 +70,6 @@
             const isClickOnMenuIcon = event.target.classList.contains('menu-icon');
             const isClickOnUserIcon = event.target.classList.contains('user-icon');
 
-            // Cerrar los menús si el clic no es dentro de ellos ni en los íconos de apertura
             if (!isClickInsideNavMenu && !isClickOnMenuIcon) {
                 navMenu.classList.remove('show');
             }

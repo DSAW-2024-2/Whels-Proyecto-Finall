@@ -1,84 +1,95 @@
+/* Reinicio de márgenes, rellenos y configuración de box-sizing */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Estilo del cuerpo principal */
 body {
-    font-family: 'Fugaz One', cursive !important;
-    background: linear-gradient(to bottom right, #2f5061, #193628);
+    font-family: 'Fugaz One', cursive !important; /* Fuente personalizada */
+    background: linear-gradient(to bottom right, #2f5061, #193628); /* Fondo en degradado */
     background-size: cover;
-    background-attachment: fixed;
-    overflow-x: hidden;
+    background-attachment: fixed; /* Fondo fijo al hacer scroll */
+    overflow-x: hidden; /* Evita desplazamiento horizontal */
 }
 
+/* Contenedor de la tarjeta */
 .card-container {
     position: relative;
     width: 90%;
-    max-width: 800px;
-    margin: 20px auto;
+    max-width: 600px; /* Máximo ancho */
+    margin: 20px auto; /* Centrado horizontal */
     padding: 20px;
     background-color: #ffffff;
-    border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 15px; /* Bordes redondeados */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra */
     overflow: hidden;
 }
 
+/* Estilo del encabezado */
 header {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Espacio entre elementos */
     align-items: center;
     background-color: #2A557B;
     padding: 10px;
     color: #fff;
-    border-radius: 15px 15px 0 0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    border-radius: 15px 15px 0 0; /* Bordes redondeados en la parte superior */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra */
 }
 
+/* Iconos del menú y del usuario */
 .menu-icon, .user-icon {
     font-size: 24px;
-    cursor: pointer;
+    cursor: pointer; /* Indica que son clicables */
 }
 
+/* Título y subtítulo del encabezado */
 header h1 {
     font-size: 18px;
 }
-
 header span {
     font-weight: normal;
     font-size: 14px;
 }
 
+/* Contenido principal centrado */
 main {
     text-align: center;
     padding: 20px;
 }
 
+/* Contenedor de imagen del auto */
 .car-image {
     background-color: #2A557B;
     padding: 20px;
-    border-radius: 0 0 15px 15px;
+    border-radius: 0 0 15px 15px; /* Bordes redondeados en la parte inferior */
     color: #fff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     margin-top: 20px;
 }
 
+/* Estilo de la imagen */
 .car-image img {
     width: 150px;
     height: auto;
 }
 
+/* Texto debajo de la imagen */
 .car-image p {
     margin-top: 10px;
     font-size: 16px;
 }
 
+/* Contenedor de acciones */
 .actions {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-around; /* Espacio entre acciones */
     margin-top: 30px;
 }
 
+/* Estilo individual para cada acción */
 .action {
     text-align: center;
 }
@@ -91,60 +102,69 @@ main {
     margin-top: 5px;
 }
 
-/* Estilos para los menús desplegables */
+/* Menú lateral oculto inicialmente */
 .menu {
     position: absolute;
     background-color: rgba(27, 43, 60, 0.9);
-    width: 45%; /* Ancho reducido */
-    max-width: 180px; /* Ancho máximo reducido */
-    padding: 15px; /* Padding reducido */
+    width: 100%;
+    max-width: 220px; /* Ancho máximo del menú */
+    padding: 15px;
     color: #fff;
     display: flex;
     flex-direction: column;
-    transition: transform 0.3s ease;
-    z-index: 10;
-    border-radius: 10px; /* Bordes redondeados más pequeños */
+    transition: transform 0.3s ease; /* Animación de despliegue */
+    z-index: 10; /* Asegura que esté sobre otros elementos */
+    border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-/* Posición específica para cada menú */
+/* Posiciones iniciales de los menús izquierdo y derecho */
 .left-menu {
     top: 40px;
     left: 5px;
-    transform: translateX(-120%);
+    transform: translateX(-120%); /* Oculto a la izquierda */
 }
 
 .right-menu {
     top: 40px;
     right: 5px;
-    transform: translateX(120%);
+    transform: translateX(120%); /* Oculto a la derecha */
 }
 
+/* Lista de opciones en el menú */
 .menu ul {
-    list-style: none;
+    list-style: none; /* Elimina las viñetas */
     padding-left: 0;
 }
 
+/* Elementos de la lista en el menú */
 .menu li {
     display: flex;
     align-items: center;
-    padding: 10px; /* Padding reducido */
-    font-size: 16px; /* Fuente más pequeña */
+    padding: 12px 0;
+    font-size: 16px;
+    border-bottom: 1px solid #ddd;
+}
+
+.menu li:last-child {
+    border-bottom: none; /* Sin borde en el último elemento */
 }
 
 .menu li span {
-    margin-right: 8px; /* Margen reducido */
-    font-size: 20px; /* Iconos más pequeños */
+    margin-right: 8px;
+    font-size: 20px;
 }
 
+/* Contenedor de acciones dentro del menú */
 .menu .actions {
-    padding: 15px; /* Padding reducido */
+    padding: 15px;
     text-align: center;
 }
 
+/* Botones de acción */
 button {
-    padding: 8px 12px; /* Botones más pequeños */
-    font-size: 14px; /* Fuente más pequeña */
+    padding: 8px 12px;
+    font-size: 14px;
     border: none;
     background-color: #2A557B;
     color: #fff;
@@ -154,14 +174,42 @@ button {
 }
 
 button:hover {
-    background-color: #3D6A92;
+    background-color: #3D6A92; /* Cambia de color al pasar el cursor */
 }
 
-/* Mostrar los menús cuando se activan */
-.left-menu.show {
-    transform: translateX(0);
-}
-
+/* Muestra los menús cuando se agrega la clase 'show' */
+.left-menu.show,
 .right-menu.show {
-    transform: translateX(0);
+    transform: translateX(0); /* Despliega el menú */
+}
+
+/* Ajustes responsivos para pantallas medianas */
+@media (max-width: 768px) {
+    .card-container {
+        width: 95%;
+    }
+    .menu {
+        width: 80%;
+        max-width: 200px; /* Ajusta el ancho del menú */
+    }
+    header h1 {
+        font-size: 16px;
+    }
+}
+
+/* Ajustes responsivos para pantallas pequeñas */
+@media (max-width: 480px) {
+    .menu {
+        width: 85%;
+        max-width: 180px; /* Ancho ajustado para móviles */
+    }
+    header h1 {
+        font-size: 14px;
+    }
+    .menu-icon, .user-icon {
+        font-size: 20px; /* Iconos más pequeños */
+    }
+    .menu li {
+        font-size: 14px;
+    }
 }
