@@ -50,12 +50,30 @@ document.getElementById('car-register-form').addEventListener('submit', async fu
     formData.append('marca', marca);
     formData.append('modelo', modelo);
 
+// Obtener el token del almacenamiento local
+const token = localStorage.getItem('token');
+
+try {
     // Enviar los datos al servidor
-    const response = await fetch('/car/register', {
+    const response = await fetch('http://localhost:3000/car/registerCar', {
         method: 'POST',
+        headers: {
+            'Authorization': `Bearer ${token}`
+        },
         body: formData
     });
 
-    const result = await response.text();
-    alert(result);
+    if (response.ok) {
+        const result = await response.text();
+        alert("¡Carro registrado exitosamente!");
+        console.log(result);
+    } else {
+        const error = await response.json();
+        console.error("Error:", error);
+        alert(`Error al registrar el carro: ${error.message}`);
+    }
+} catch (error) {
+    console.error("Error de conexión:", error);
+    alert("Hubo un problema al conectar con el servidor.");
+}
 });
