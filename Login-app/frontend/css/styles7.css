@@ -1,0 +1,176 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Fugaz One', cursive;
+    background: linear-gradient(to bottom right, #2f5061, #193628);
+    background-size: cover;
+    background-attachment: fixed;
+    overflow-x: hidden;
+}
+
+.card-container {
+    position: relative;
+    width: 90%;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2A557B;
+    padding: 10px;
+    color: #fff;
+    border-radius: 15px 15px 0 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.menu-icon, .user-icon {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+header h1 {
+    font-size: 18px;
+}
+
+header span {
+    font-weight: normal;
+    font-size: 14px;
+}
+
+main {
+    text-align: center;
+    padding: 20px;
+}
+
+.car-image {
+    background-color: #2A557B;
+    padding: 20px;
+    border-radius: 0 0 15px 15px;
+    color: #fff;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.car-image img {
+    width: 150px;
+    height: auto;
+}
+
+.license-plate {
+    background-color: #FFD700;
+    color: #333;
+    font-size: 18px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    display: inline-block;
+}
+
+.actions {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.action {
+    text-align: center;
+}
+
+.action span {
+    font-size: 24px;
+}
+
+.action p {
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+.menu {
+    position: absolute;
+    background-color: rgba(27, 43, 60, 0.9);
+    width: 100%;
+    max-width: 220px;
+    padding: 15px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+    z-index: 10;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.left-menu {
+    top: 50px;
+    left: 5px;
+    transform: translateX(-120%);
+}
+
+.right-menu {
+    top: 50px;
+    right: 5px;
+    transform: translateX(120%);
+}
+
+.menu ul {
+    list-style: none;
+    margin-bottom: 10px;
+}
+
+.menu li {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    padding: 10px 0;
+}
+
+.menu li span {
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+.actions button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #FF3B3F;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.actions button:hover {
+    background-color: #FF6B6B;
+}
+
+.show {
+    transform: translateX(0);
+}
+
+@media (max-width: 600px) {
+    .car-image img {
+        width: 120px;
+    }
+    
+    .menu {
+        width: 90%;
+    }
+    
+    .card-container {
+        padding: 15px;
+    }
+}

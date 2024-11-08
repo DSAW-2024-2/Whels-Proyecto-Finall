@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplicación - Vista de Conductor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles7.css">
+</head>
+<body>
+    
+    <div class="card-container">
+        
+        <!-- Encabezado -->
+        <header>
+            <div class="menu-icon" onclick="toggleMenu('navMenu')">☰</div>
+            <h1>WHEELS <span>Conductor</span></h1>
+            <div class="user-icon" onclick="toggleMenu('userMenu')">👤</div>
+        </header>
+        
+        <!-- Contenido principal -->
+        <main>
+            <div class="car-image">
+                <img src="../assets/images/city-car-front-view-4490d2.webp" alt="Imagen de auto">
+                <div class="license-plate">ABC-123</div>
+            </div>
+            
+            <div class="actions">
+                <div class="action">
+                    <span>📅</span>
+                    <p>Nuevo Viaje</p>
+                </div>
+                <div class="action">
+                    <span>📅</span>
+                    <p>Mis Viajes</p>
+                </div>
+            </div>
+        </main>
+
+        <!-- Menú de navegación -->
+        <aside id="navMenu" class="menu left-menu">
+            <ul>
+                <li><span>🧍</span> Conductor</li>
+                <li><span>📅</span> Mis Viajes</li>
+                <li><span>🚗</span> Nuevo Viaje</li>
+                <li><span>🏠</span> Home</li>
+            </ul>
+        </aside>
+
+        <!-- Menú de usuario -->
+        <aside id="userMenu" class="menu right-menu">
+            <ul>
+                <li><span>👤</span> Nombre de usuario</li>
+                <li><span>✉️</span> Correo del usuario</li>
+                <li><span>📞</span> Teléfono</li>
+                <li><span>🎓</span> ID Universitario</li>
+                <li><span>🚗</span> Info Carro</li>
+            </ul>
+            <div class="actions">
+                <button>Editar Datos</button>
+                <button>Cerrar Sesión</button>
+            </div>
+        </aside>
+    </div>
+    
+    <script>
+        function toggleMenu(menuId) {
+            const menu = document.getElementById(menuId);
+            menu.classList.toggle('show');
+        }
+
+        document.addEventListener('click', function(event) {
+            const navMenu = document.getElementById('navMenu');
+            const userMenu = document.getElementById('userMenu');
+            const isClickInsideNavMenu = navMenu.contains(event.target);
+            const isClickInsideUserMenu = userMenu.contains(event.target);
+            const isClickOnMenuIcon = event.target.classList.contains('menu-icon');
+            const isClickOnUserIcon = event.target.classList.contains('user-icon');
+
+            if (!isClickInsideNavMenu && !isClickOnMenuIcon) {
+                navMenu.classList.remove('show');
+            }
+            
+            if (!isClickInsideUserMenu && !isClickOnUserIcon) {
+                userMenu.classList.remove('show');
+            }
+        });
+    </script>
+</body>
+</html>
