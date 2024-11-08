@@ -7,11 +7,16 @@
 
 /* Estilo del cuerpo principal */
 body {
-    font-family: 'Fugaz One', cursive !important; /* Fuente personalizada */
-    background: linear-gradient(to bottom right, #2f5061, #193628); /* Fondo en degradado */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Fugaz One', cursive;
+    background: linear-gradient(to bottom right, #2f5061, #193628);
     background-size: cover;
-    background-attachment: fixed; /* Fondo fijo al hacer scroll */
-    overflow-x: hidden; /* Evita desplazamiento horizontal */
+    background-attachment: fixed;
+    overflow-x: hidden;
 }
 
 /* Contenedor de la tarjeta */
