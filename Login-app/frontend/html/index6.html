@@ -4,61 +4,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aplicación - Vista de Pasajero</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/style6.css">
 </head>
 <body>
     <div class="card-container">
-    <header>
-        <div class="menu-icon" onclick="toggleMenu('navMenu')">☰</div>
-        <h1>WHEELS <span>Pasajeros</span></h1>
-        <div class="user-icon" onclick="toggleMenu('userMenu')">👤</div>
-    </header>
-
-    <main>
-        <div class="car-image">
-            <img src="ruta/del/auto.jpg" alt="Imagen de auto">
-            <p>¿Cual es nuestro destino el día de hoy?</p>
-        </div>
-        <div class="actions">
-            <div class="action">
-                <span>🚗</span>
-                <p>Reservar carro</p>
+        <header>
+            <div class="menu-icon" onclick="toggleMenu('navMenu')">☰</div>
+            <h1>WHEELS <span>Pasajeros</span></h1>
+            <div class="user-icon" onclick="toggleMenu('userMenu')">👤</div>
+        </header>
+    
+        <main>
+            <div class="car-image">
+                <img src="../assets/images/city-car-front-view-4490d2.webp" alt="Imagen de auto">
+                <p>¿Cuál es nuestro destino el día de hoy?</p>
             </div>
-            <div class="action">
-                <span>📅</span>
-                <p>Mis reservas</p>
+            <div class="actions">
+                <div class="action">
+                    <span>🚗</span>
+                    <p>RESERVAR CARRO</p>
+                </div>
+                <div class="action">
+                    <span>📅</span>
+                    <p>MIS RESERVAS</p>
+                </div>
             </div>
-        </div>
-    </main>
-
-    <!-- Menú de navegación -->
-    <aside id="navMenu" class="menu hidden left-menu">
-        <ul>
-            <li><span>🧍</span> Pasajero</li>
-            <li><span>📅</span> Mis Reservas</li>
-            <li><span>🚗</span> Reservar Carro</li>
-            <li><span>🏠</span> Home</li>
-        </ul>
-    </aside>
-
-    <!-- Menú de usuario -->
-    <aside id="userMenu" class="menu hidden right-menu">
-        <ul>
-            <li><span>👤</span> Nombre de usuario</li>
-            <li><span>✉️</span> Correo del usuario</li>
-            <li><span>📞</span> Teléfono</li>
-            <li><span>🎓</span> ID Universitario</li>
-        </ul>
-        <div class="actions">
-            <button>Editar Datos</button>
-            <button>Cerrar Sesión</button>
-        </div>
-    </aside>
-</div>
+        </main>
+    
+        <!-- Menú de navegación -->
+        <aside id="navMenu" class="menu left-menu">
+            <ul>
+                <li><span>🧍</span> Pasajero</li>
+                <li><span>📅</span> Mis Reservas</li>
+                <li><span>🚗</span> Reservar Carro</li>
+                <li><span>🏠</span> Home</li>
+            </ul>
+        </aside>
+    
+        <!-- Menú de usuario -->
+        <aside id="userMenu" class="menu right-menu">
+            <ul>
+                <li><span>👤</span> Nombre de usuario</li>
+                <li><span>✉️</span> Correo del usuario</li>
+                <li><span>📞</span> Teléfono</li>
+                <li><span>🎓</span> ID Universitario</li>
+            </ul>
+            <div class="actions">
+                <button>Editar Datos</button>
+                <button>Cerrar Sesión</button>
+            </div>
+        </aside>
+    </div>
+    
     <script>
         function toggleMenu(menuId) {
             const menu = document.getElementById(menuId);
-            menu.classList.toggle('hidden');
+            menu.classList.toggle('show');
         }
 
         // Función para cerrar los menús si se hace clic fuera de ellos
@@ -72,10 +74,10 @@
 
             // Cerrar los menús si el clic no es dentro de ellos ni en los íconos de apertura
             if (!isClickInsideNavMenu && !isClickOnMenuIcon) {
-                navMenu.classList.add('hidden');
+                navMenu.classList.remove('show');
             }
             if (!isClickInsideUserMenu && !isClickOnUserIcon) {
-                userMenu.classList.add('hidden');
+                userMenu.classList.remove('show');
             }
         });
     </script>
