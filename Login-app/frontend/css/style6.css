@@ -67,7 +67,6 @@ main {
     border-radius: 0 0 15px 15px; /* Bordes redondeados en la parte inferior */
     color: #fff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    margin-top: 20px;
 }
 
 /* Estilo de la imagen */
@@ -86,7 +85,7 @@ main {
 .actions {
     display: flex;
     justify-content: space-around; /* Espacio entre acciones */
-    margin-top: 30px;
+    margin-top: 20px;
 }
 
 /* Estilo individual para cada acción */
@@ -133,83 +132,58 @@ main {
 
 /* Lista de opciones en el menú */
 .menu ul {
-    list-style: none; /* Elimina las viñetas */
-    padding-left: 0;
+    list-style: none; /* Elimina viñetas */
+    margin-bottom: 10px;
 }
 
-/* Elementos de la lista en el menú */
+/* Opciones individuales */
 .menu li {
     display: flex;
     align-items: center;
-    padding: 12px 0;
     font-size: 16px;
-    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
 }
 
-.menu li:last-child {
-    border-bottom: none; /* Sin borde en el último elemento */
-}
-
+/* Iconos y texto en cada opción */
 .menu li span {
-    margin-right: 8px;
+    margin-right: 10px;
     font-size: 20px;
 }
 
-/* Contenedor de acciones dentro del menú */
-.menu .actions {
-    padding: 15px;
-    text-align: center;
-}
-
-/* Botones de acción */
-button {
-    padding: 8px 12px;
-    font-size: 14px;
-    border: none;
-    background-color: #2A557B;
+/* Botones dentro del menú de usuario */
+.actions button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #FF3B3F;
     color: #fff;
+    border: none;
     border-radius: 5px;
     cursor: pointer;
-    margin: 5px;
 }
 
-button:hover {
-    background-color: #3D6A92; /* Cambia de color al pasar el cursor */
+/* Efecto de cambio de color al pasar el mouse */
+.actions button:hover {
+    background-color: #FF6B6B;
 }
 
-/* Muestra los menús cuando se agrega la clase 'show' */
-.left-menu.show,
-.right-menu.show {
+/* Clase para mostrar el menú cuando está activo */
+.show {
     transform: translateX(0); /* Despliega el menú */
 }
 
-/* Ajustes responsivos para pantallas medianas */
-@media (max-width: 768px) {
+/* Estilo responsivo para dispositivos pequeños */
+@media (max-width: 600px) {
+    .car-image img {
+        width: 120px;
+    }
+    
+    .menu {
+        width: 90%;
+    }
+    
     .card-container {
-        width: 95%;
-    }
-    .menu {
-        width: 80%;
-        max-width: 200px; /* Ajusta el ancho del menú */
-    }
-    header h1 {
-        font-size: 16px;
-    }
-}
-
-/* Ajustes responsivos para pantallas pequeñas */
-@media (max-width: 480px) {
-    .menu {
-        width: 85%;
-        max-width: 180px; /* Ancho ajustado para móviles */
-    }
-    header h1 {
-        font-size: 14px;
-    }
-    .menu-icon, .user-icon {
-        font-size: 20px; /* Iconos más pequeños */
-    }
-    .menu li {
-        font-size: 14px;
+        padding: 15px;
     }
 }
