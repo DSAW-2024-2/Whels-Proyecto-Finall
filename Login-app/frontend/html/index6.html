@@ -80,36 +80,6 @@
             </div>
         </aside>
     </div>
-    
-    <!-- Script para manejar la apertura y cierre de los menús -->
-    <script>
-        // Función para alternar la visibilidad de un menú
-        function toggleMenu(menuId) {
-            const menu = document.getElementById(menuId);
-            menu.classList.toggle('show');
-        }
-
-        // Evento para cerrar los menús al hacer clic fuera de ellos
-        document.addEventListener('click', function(event) {
-            const navMenu = document.getElementById('navMenu');
-            const userMenu = document.getElementById('userMenu');
-            
-            // Verificar si el clic fue dentro de cada menú o icono correspondiente
-            const isClickInsideNavMenu = navMenu.contains(event.target);
-            const isClickInsideUserMenu = userMenu.contains(event.target);
-            const isClickOnMenuIcon = event.target.classList.contains('menu-icon');
-            const isClickOnUserIcon = event.target.classList.contains('user-icon');
-
-            // Si el clic fue fuera del menú de navegación y del icono, cerrarlo
-            if (!isClickInsideNavMenu && !isClickOnMenuIcon) {
-                navMenu.classList.remove('show');
-            }
-            
-            // Si el clic fue fuera del menú de usuario y del icono, cerrarlo
-            if (!isClickInsideUserMenu && !isClickOnUserIcon) {
-                userMenu.classList.remove('show');
-            }
-        });
-    </script>
+    <script src="../js/script6.js"></script>
 </body>
 </html>
