@@ -28,7 +28,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #2A557B;
+    background-color: #358511;
     padding: 10px;
     color: #fff;
     border-radius: 15px 15px 0 0;
@@ -55,7 +55,7 @@ main {
 }
 
 .car-image {
-    background-color: #2A557B;
+    background-color: #358511;
     padding: 20px;
     border-radius: 0 0 15px 15px;
     color: #fff;
