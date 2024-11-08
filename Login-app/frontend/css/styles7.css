@@ -74,9 +74,12 @@ main {
     font-size: 18px;
     padding: 5px 10px;
     border-radius: 5px;
-    margin-top: 10px;
-    display: inline-block;
+    position: absolute;
+    bottom: -10px; /* Ajusta la posición vertical para que se superponga a la imagen */
+    left: 50%;
+    transform: translateX(-50%);
 }
+
 
 .actions {
     display: flex;
