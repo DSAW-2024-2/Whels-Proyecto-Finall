@@ -1,12 +1,20 @@
 // script6.js
 
-// Función para alternar la visibilidad de un menú
+// Function to toggle the visibility of a menu, closing the other if open
 function toggleMenu(menuId) {
+    const navMenu = document.getElementById('navMenu');
+    const userMenu = document.getElementById('userMenu');
     const menu = document.getElementById(menuId);
+
+    // Close the other menu if it's open
+    if (menuId === 'navMenu') userMenu.classList.remove('show');
+    if (menuId === 'userMenu') navMenu.classList.remove('show');
+
+    // Toggle the selected menu
     menu.classList.toggle('show');
 }
 
-// Evento para cerrar los menús cuando se hace clic fuera de ellos
+// Event to close menus when clicking outside of them
 document.addEventListener('click', function(event) {
     const navMenu = document.getElementById('navMenu');
     const userMenu = document.getElementById('userMenu');
@@ -15,31 +23,43 @@ document.addEventListener('click', function(event) {
     const isClickOnMenuIcon = event.target.classList.contains('menu-icon');
     const isClickOnUserIcon = event.target.classList.contains('user-icon');
 
-    // Cierra el menú de navegación si el clic es fuera de él y no en el icono
+    // Close the navigation menu if clicked outside and not on the menu icon
     if (!isClickInsideNavMenu && !isClickOnMenuIcon) {
         navMenu.classList.remove('show');
     }
 
-    // Cierra el menú de usuario si el clic es fuera de él y no en el icono
+    // Close the user menu if clicked outside and not on the user icon
     if (!isClickInsideUserMenu && !isClickOnUserIcon) {
         userMenu.classList.remove('show');
     }
 });
 
-// Función para el botón de "Editar Datos"
+// Function for the "Editar Datos" button
 function editarDatos() {
-    window.location.href = 'index2.html'; // Redirige a index2.html
+    window.location.href = 'index2.html'; // Redirect to edit data page
 }
 
-// Función para el botón de "Cerrar Sesión"
+// Function for the "Cerrar Sesión" button
 function cerrarSesion() {
-    window.location.href = 'index3.html'; // Redirige a index3.html
+    window.location.href = 'index3.html'; // Redirect to logout page
 }
 
-// Asignación de eventos a los botones de acción
+// Function to handle "Reservar Carro" action by redirecting to index8.html
+function reservarCarro() {
+    window.location.href = 'index8.html'; // Redirect to the car reservation page
+}
+
+// Function to handle "Mis Reservas" action (placeholder)
+function verReservas() {
+    alert("Funcionalidad para ver reservas próximamente");
+}
+
+// Assign event listeners to action buttons
 document.addEventListener('DOMContentLoaded', function() {
     const editarBtn = document.querySelector('.actions button:first-child');
     const cerrarSesionBtn = document.querySelector('.actions button:last-child');
+    const reservarCarroAction = document.querySelector('.actions .action:nth-child(1)');
+    const verReservasAction = document.querySelector('.actions .action:nth-child(2)');
 
     if (editarBtn) {
         editarBtn.addEventListener('click', editarDatos);
@@ -47,5 +67,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (cerrarSesionBtn) {
         cerrarSesionBtn.addEventListener('click', cerrarSesion);
+    }
+
+    if (reservarCarroAction) {
+        reservarCarroAction.addEventListener('click', reservarCarro);
+    }
+
+    if (verReservasAction) {
+        verReservasAction.addEventListener('click', verReservas);
     }
 });

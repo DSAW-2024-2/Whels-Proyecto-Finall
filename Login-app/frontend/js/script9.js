@@ -1,5 +1,5 @@
-// Transmilenio API URL
-const apiUrl = 'https://gis.transmilenio.gov.co/arcgis/rest/services/Troncal/consulta_estaciones_troncales/FeatureServer/0/query?where=1%3D1&outFields=nombre_estacion,ubicacion_estacion,coordenada_x_estacion,coordenada_y_estacion&outSR=4326&f=json';
+// Updated Transmilenio API URL with all fields
+const apiUrl = 'https://gis.transmilenio.gov.co/arcgis/rest/services/Troncal/consulta_estaciones_troncales/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=json';
 
 // Route-specific coordinates for filtering (example values, adjust as needed)
 const routeCoordinates = {
@@ -20,7 +20,7 @@ async function loadStations(routeName) {
         const response = await fetch(apiUrl);
         const data = await response.json();
 
-        // Debugging: Check if we received data from the API
+        // Check if we received data from the API
         if (!data.features || data.features.length === 0) {
             console.error('No stations found in the API response');
             alert('No se encontraron estaciones para esta ruta.');
@@ -28,6 +28,7 @@ async function loadStations(routeName) {
         }
         
         console.log(`Total stations fetched: ${data.features.length}`);
+        console.log('Sample station data:', data.features[0]);  // Log a sample of the station data
 
         // Get route coordinates and radius for filtering
         const { x, y, radius } = routeCoordinates[routeName];
@@ -48,7 +49,7 @@ async function loadStations(routeName) {
             return distance <= radius;
         });
 
-        // Debugging: Check filtered stations count
+        // Check filtered stations count
         console.log(`Stations after filtering for route ${routeName}: ${filteredStations.length}`);
         
         // Populate dropdowns with filtered stations
