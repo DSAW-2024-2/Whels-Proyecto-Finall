@@ -1,0 +1,149 @@
+/* (Base styles remain the same) */
+/* Reset and Base Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom right, #2f5061, #193628);
+}
+
+/* Background */
+.background {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #0f3b57, #184e77);
+}
+
+/* Main Container */
+.main-container {
+    background-color: white;
+    width: 90%;
+    max-width: 500px;
+    border-radius: 16px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+/* Header Styling */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #3b5a81;
+    color: white;
+}
+
+.logo {
+    font-size: 1.5rem;
+}
+
+.menu-icon {
+    font-size: 1.5rem;
+}
+
+/* Content Container */
+.content {
+    padding: 1rem;
+}
+
+/* View Styling */
+.view {
+    display: none;
+}
+
+.view.active {
+    display: block;
+}
+
+h2 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: #3b5a81;
+}
+
+/* Route List and Trip List Styling */
+.route-list,
+.trip-list {
+    list-style: none;
+}
+
+.route-list li,
+.trip-list li {
+    padding: 0.5rem 1rem;
+    margin: 0.5rem 0;
+    background-color: #4f729b;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+.trip-list li img {
+    width: 40px;
+    margin-right: 10px;
+}
+
+/* Button Styling */
+button {
+    background-color: #4f729b;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 1rem;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #3b5a81;
+}
+/* Adjusted header and button colors for the driver interface */
+header {
+    background-color: #4CAF50; /* Green */
+    color: white;
+}
+
+button {
+    background-color: #4CAF50; /* Green */
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 1rem;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #388E3C; /* Darker green */
+}
+
+/* New styling for trip form */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    margin: 0.5rem 0 0.2rem;
+}
+
+form input {
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.hidden {
+    display: none;
+}

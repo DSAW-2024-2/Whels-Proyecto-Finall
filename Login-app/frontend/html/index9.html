@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wheels Conductor</title>
+    <link rel="stylesheet" href="../css/styles9.css">
+</head>
+<body>
+    <div class="background">
+        <div class="main-container">
+            <header>
+                <div class="logo">WHEELS <span>Conductor</span></div>
+                <div class="menu-icon">☰</div>
+            </header>
+
+            <div class="content">
+                <!-- Route Selection View -->
+                <div id="route-selection" class="view active">
+                    <h2>Seleccione la Ruta</h2>
+                    <ul class="route-list">
+                        <li onclick="showNewTripForm('Universidad La Sabana')">Universidad La Sabana</li>
+                        <li onclick="showNewTripForm('Boyacá')">Boyacá</li>
+                        <li onclick="showNewTripForm('Novena')">Novena</li>
+                        <li onclick="showNewTripForm('Portal')">Portal</li>
+                        <li onclick="showNewTripForm('Séptima')">Séptima</li>
+                        <li onclick="showNewTripForm('Suba')">Suba</li>
+                        <li onclick="showNewTripForm('Autopista')">Autopista</li>
+                    </ul>
+                </div>
+
+                <!-- New Trip Form View -->
+                <div id="new-trip-form" class="view hidden">
+                    <h2>Nuevo Viaje</h2>
+                    <p>Ruta seleccionada: <span id="selected-route"></span></p>
+                    <form>
+                        <label for="pickup">Punto de partida</label>
+                        <select id="pickup"></select>
+
+                        <label for="destination">Punto de llegada</label>
+                        <select id="destination"></select>
+
+                        <label for="seats">Cupos disponibles</label>
+                        <input type="number" id="seats" placeholder="Cupos disponibles" min="1" max="10">
+                        
+                        <button type="button" onclick="confirmNewTrip()">Nuevo Viaje</button>
+                    </form>
+                    <button onclick="goBackToRoutes()">Volver</button>
+                </div>
+
+                <!-- Trip Confirmation View -->
+                <div id="confirm-new-trip" class="view hidden">
+                    <p>¿Estás seguro de este nuevo viaje?</p>
+                    <button onclick="createTrip(true)">Sí</button>
+                    <button onclick="createTrip(false)">No</button>
+                </div>
+
+                <!-- Trip Creation Result View -->
+                <div id="trip-result" class="view hidden">
+                    <p id="trip-message"></p>
+                    <button onclick="goToHome()">Volver al inicio</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../js/script9.js"></script>
+</body>
+</html>

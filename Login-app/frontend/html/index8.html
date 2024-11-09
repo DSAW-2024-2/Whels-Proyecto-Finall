@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wheels Pasajero</title>
+    <link rel="stylesheet" href="../css/styles8.css">
+</head>
+<body>
+    <div class="background">
+        <div class="main-container">
+            <header>
+                <div class="logo">WHEELS <span>Pasajero</span></div>
+                <div class="menu-icon">☰</div>
+            </header>
+
+            <div class="content">
+                <!-- Route Selection View -->
+                <div id="route-selection" class="view active">
+                    <h2>Seleccione la Ruta</h2>
+                    <ul class="route-list">
+                        <li onclick="showTrips('Universidad La Sabana')">Universidad La Sabana</li>
+                        <li onclick="showTrips('Boyacá')">Boyacá</li>
+                        <li onclick="showTrips('Novena')">Novena</li>
+                        <li onclick="showTrips('Portal')">Portal</li>
+                        <li onclick="showTrips('Séptima')">Séptima</li>
+                        <li onclick="showTrips('Suba')">Suba</li>
+                        <li onclick="showTrips('Autopista')">Autopista</li>
+                    </ul>
+                </div>
+
+                <!-- Available Trips View -->
+                <div id="trip-available" class="view hidden">
+                    <h2>Viajes Disponibles</h2>
+                    <ul class="trip-list">
+                        <li onclick="showTripDetails()">
+                            <img src="../assets/images/city-car-front-view-4490d2.webp" alt="Car">
+                            <div>
+                                <p>Calle 169 # Universidad Sabana</p>
+                                <p>Hora: 15:00 - Cupos: 4</p>
+                            </div>
+                        </li>
+                    </ul>
+                    <button onclick="goBack()">Volver</button>
+                </div>
+
+                <!-- Trip Details View -->
+                <div id="trip-details" class="view hidden">
+                    <h2>Detalle del Viaje</h2>
+                    <p>Ruta: Calle 169 # Universidad Sabana</p>
+                    <p>Hora: 15:00</p>
+                    <p>Cupos disponibles: 4</p>
+                    <button onclick="confirmReservation()">Reservar</button>
+                    <button onclick="goBackToTrips()">Volver</button>
+                </div>
+
+                <!-- Reservation Confirmation View -->
+                <div id="confirm-reservation" class="view hidden">
+                    <p>¿Estás seguro de tu reserva?</p>
+                    <button onclick="makeReservation(true)">Sí</button>
+                    <button onclick="makeReservation(false)">No</button>
+                </div>
+
+                <!-- Reservation Result View -->
+                <div id="reservation-result" class="view hidden">
+                    <p id="reservation-message"></p>
+                    <button onclick="goToHome()">Volver al inicio</button>
+                </div>
+                
+                <!-- My Reservations View -->
+                <div id="my-reservations" class="view hidden">
+                    <h2>Mis Reservas</h2>
+                    <ul class="reservation-list">
+                        <li onclick="confirmCancellation()">
+                            <div>
+                                <p>Ruta: Calle 169 # Universidad Sabana</p>
+                                <p>Hora: 15:00</p>
+                            </div>
+                            <button>Cancelar</button>
+                        </li>
+                    </ul>
+                    <button onclick="goBackToHome()">Volver al inicio</button>
+                </div>
+
+                <!-- Cancellation Confirmation View -->
+                <div id="confirm-cancellation" class="view hidden">
+                    <p>¿Estás seguro de la Cancelación?</p>
+                    <button onclick="cancelReservation(true)">Sí</button>
+                    <button onclick="cancelReservation(false)">No</button>
+                </div>
+
+                <!-- Cancellation Result View -->
+                <div id="cancellation-result" class="view hidden">
+                    <p id="cancellation-message"></p>
+                    <button onclick="goToHome()">Volver al inicio</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../js/script8.js"></script>
+</body>
+</html>
