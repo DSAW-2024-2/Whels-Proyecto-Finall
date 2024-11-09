@@ -121,13 +121,13 @@ main {
 }
 
 .left-menu {
-    top: 50px;
+    top: 30px;
     left: 5px;
     transform: translateX(-120%);
 }
 
 .right-menu {
-    top: 50px;
+    top: 30px;
     right: 5px;
     transform: translateX(120%);
 }
