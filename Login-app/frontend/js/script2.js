@@ -69,7 +69,18 @@ document.getElementById("register-form").addEventListener("submit", async functi
         if (response.ok) {
             alert("Registro completado exitosamente");
             console.log('Usuario registrado exitosamente:', data);
-            window.location.href = "/Login-app/frontend/html/index5.html";
+            
+            // Redirigir según el rol
+            const role = sessionStorage.getItem('role');  // Obtener el rol del sessionStorage
+            if (role === 'pasajero') {
+                window.location.href = 'index8.html';  // Página principal del pasajero
+            } else if (role === 'conductor') {
+                window.location.href = 'index9.html';  // Página principal del conductor
+            } else {
+                alert('Error: Rol no seleccionado. Vuelve a seleccionar el rol.');
+                window.location.href = 'index5.html';  // Redirigir a la selección de rol si no está definido
+            }
+
         } else {
             console.error('Error al registrar usuario:', data);
             alert('Error al registrar usuario. Intenta nuevamente.');

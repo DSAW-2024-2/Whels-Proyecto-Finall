@@ -5,18 +5,40 @@
     box-sizing: border-box;
 }
 
-/* Estilo del cuerpo principal */
+/* style6.css: Estilos generales de pasajero */
+
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    font-family: 'Fugaz One', cursive;
     background: linear-gradient(to bottom right, #2f5061, #193628);
-    background-size: cover;
-    background-attachment: fixed;
-    overflow-x: hidden;
+    font-family: Arial, sans-serif;
+}
+
+/* Botones generales */
+.button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #388E3C;
+}
+
+/* Listas y Tarjetas */
+.route-list, .trip-list {
+    list-style: none;
+    padding: 0;
+}
+
+.route-list li, .trip-list li {
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #4f729b;
+    color: white;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
 }
 
 /* Contenedor de la tarjeta */
