@@ -54,7 +54,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 1rem;
-    background-color: #3b5a81;
+    Background-color: #2A557B;
     color: white;
     border-radius: 10px;
 }
@@ -84,7 +84,7 @@ header {
 h2 {
     font-size: 1.2rem;
     margin-bottom: 1rem;
-    color: #3b5a81;
+    color: #2A557B;
 }
 
 /* Route List and Trip List Styling */
@@ -97,7 +97,7 @@ h2 {
 .trip-list li {
     padding: 0.5rem 1rem;
     margin: 0.5rem 0;
-    background-color: #4f729b;
+    Background-color: #2A557B;
     border-radius: 5px;
     cursor: pointer;
     display: flex;
@@ -112,7 +112,7 @@ h2 {
 
 /* Button Styling */
 button {
-    background-color: #4f729b;
+    Background-color: #2A557B;
     color: white;
     border: none;
     padding: 0.5rem 1rem;
@@ -123,7 +123,7 @@ button {
 }
 
 button:hover {
-    background-color: #3b5a81;
+    background-color: #4a78af;
 }
 
 /* (Base and previous styles remain the same) */
@@ -138,12 +138,13 @@ button:hover {
 }
 
 button {
-    background-color: #4f729b;
+    Background-color: #2A557B;
     color: white;
     border: none;
     padding: 0.5rem 1rem;
     border-radius: 5px;
     cursor: pointer;
+    font-family: 'Fugaz One', cursive !important;
     margin-top: 1rem;
     width: 100%;
 }
