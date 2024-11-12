@@ -156,3 +156,12 @@ button:hover {
 .hidden {
     display: none;
 }
+
+@media (max-width: 500px) {
+    
+    .main-container {
+        width: 100%; /* Cambia el ancho al 100% en pantallas pequeñas */
+        padding: 15px;
+        height: 100%;
+    }
+}
