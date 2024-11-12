@@ -1,0 +1,164 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+/* Encabezado */
+header {
+    width: 100%;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2e7d32;
+    color: #ffffff;
+}
+
+header h1 {
+    font-size: 18px;
+    text-align: center;
+}
+
+header h1 span {
+    font-weight: bold;
+}
+
+.header-icons {
+    font-size: 20px;
+}
+
+.icon {
+    cursor: pointer;
+}
+
+/* Contenedor principal */
+#driver-view {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 20px;
+}
+
+.main-container {
+    background-color: #2e7d32;
+    border-radius: 20px;
+    padding: 20px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Tarjeta de información del viaje */
+.trip-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    cursor: pointer;
+}
+
+.trip-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.car-icon {
+    width: 40px;
+    height: auto;
+}
+
+/* Tarjetas de pasajeros */
+.passenger-card {
+    background-color: #e0f7fa;
+    border-radius: 10px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+}
+
+.passenger-icon {
+    font-size: 30px;
+    color: #00796b;
+}
+
+.passenger-details p {
+    font-size: 14px;
+    color: #333;
+}
+
+/* Modal */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.3s;
+}
+
+.modal-content {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 280px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.confirm-btn {
+    background-color: #5cb85c;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 5px;
+}
+
+.deny-btn {
+    background-color: #d9534f;
+    color: #fff;
+    padding: 8px 16px;
+}
+
+.checkmark {
+    font-size: 24px;
+    color: #5cb85c;
+}
+
+.hidden {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.visible {
+    visibility: visible;
+    opacity: 1;
+}
