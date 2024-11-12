@@ -110,6 +110,7 @@ main {
     background-color: rgba(27, 43, 60, 0.9);
     width: 100%;
     max-width: 220px;
+    max-height: 420px;
     padding: 15px;
     color: #fff;
     display: flex;
@@ -179,8 +180,11 @@ main {
     }
     
     .card-container {
+        width: 100%; /* Cambia el ancho al 100% en pantallas pequeñas */
         padding: 15px;
+        height: 100%;
     }
 }
+
 
 

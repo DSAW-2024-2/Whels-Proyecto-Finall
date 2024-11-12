@@ -189,6 +189,9 @@ main {
     }
     
     .card-container {
+        width: 100%; /* Cambia el ancho al 100% en pantallas pequeñas */
         padding: 15px;
+        height: 100%;
     }
 }
+
