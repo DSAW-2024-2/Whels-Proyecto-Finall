@@ -170,7 +170,7 @@ main {
     transform: translateX(0);
 }
 
-@media (max-width: 600px) {
+@media (max-width: 500px) {
     .car-image img {
         width: 120px;
     }

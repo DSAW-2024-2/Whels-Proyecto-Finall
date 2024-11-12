@@ -9,9 +9,11 @@
 
 .main-container {
     max-width: 500px;
+    font-family: 'Fugaz One', cursive !important;
     background-color: #ffffff;
     border-radius: 10px;
     padding: 20px;
+    
 }
 
 /* Estilo único para el título en index8.html */
@@ -31,7 +33,7 @@ body {
     align-items: center;
     justify-content: center;
     height: 100vh;
-        background: linear-gradient(to bottom right, #2f5061, #193628);
+    background: linear-gradient(to bottom right, #2f5061, #193628);
     background-size: cover;
     background-attachment: fixed;
 }
@@ -54,6 +56,7 @@ header {
     padding: 1rem;
     background-color: #3b5a81;
     color: white;
+    border-radius: 10px;
 }
 
 .logo {
@@ -152,5 +155,3 @@ button:hover {
 .hidden {
     display: none;
 }
-
-
