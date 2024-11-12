@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reserva de Pasajero</title>
+    <link rel="stylesheet" href="../css/styles10.css">
+</head>
+<body>
+    <!-- Encabezado -->
+    <header>
+        <div class="header-icons">
+            <span class="icon">&#9776;</span> <!-- Icono de menú -->
+        </div>
+        <h1>WHEELS</h1>
+        <div class="header-icons">
+            <span class="icon">&#128100;</span> <!-- Icono de usuario -->
+        </div>
+    </header>
+
+    <!-- Vista de Reservas del Pasajero -->
+    <section id="reservation-view" class="view">
+        <div class="reservation-card">
+            <h3>Mis Reservas</h3>
+            <div class="reservation-details">
+                <p><strong>Ruta:</strong> Calle 150 a Universidad Sabana</p>
+                <p><strong>Fecha:</strong> 15/10/2023</p>
+                <p><strong>Hora:</strong> 16:00</p>
+                <p><strong>Asiento:</strong> A04</p>
+                <p><strong>Placa del carro:</strong> ABC 555</p>
+            </div>
+            <button class="cancel-btn" onclick="showCancelConfirmation()">Cancelar</button>
+        </div>
+    </section>
+
+    <!-- Confirmación de Cancelación -->
+    <div id="cancel-confirmation" class="modal hidden">
+        <div class="modal-content">
+            <p>¿Estás seguro de tu Cancelación?</p>
+            <div class="modal-buttons">
+                <button class="confirm-btn" onclick="confirmCancellation()">Sí</button>
+                <button class="deny-btn" onclick="closeModal()">No</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mensaje de Cancelación Exitosa -->
+    <div id="cancel-success" class="modal hidden">
+        <div class="modal-content">
+            <p>Fue cancelado con éxito</p>
+            <span class="checkmark">✔️</span>
+        </div>
+    </div>
+
+    <script src="../js/script10.js"></script>
+</body>
+</html>

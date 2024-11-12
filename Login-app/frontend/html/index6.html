@@ -4,58 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aplicación - Vista de Pasajero</title>
-    
-    <!-- Fuente personalizada desde Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap" rel="stylesheet">
-    
-    <!-- Enlace al archivo CSS externo -->
     <link rel="stylesheet" href="../css/style6.css">
 </head>
 <body>
-    
-    <!-- Contenedor principal de la tarjeta -->
     <div class="card-container">
-        
-        <!-- Encabezado con icono de menú, título, y icono de usuario -->
         <header>
-            <!-- Icono de menú con evento onclick para desplegar el menú de navegación -->
             <div class="menu-icon" onclick="toggleMenu('navMenu')">☰</div>
-            
-            <!-- Título de la aplicación y subtítulo "Pasajeros" -->
             <h1>WHEELS <span>Pasajeros</span></h1>
-            
-            <!-- Icono de usuario con evento onclick para desplegar el menú de usuario -->
             <div class="user-icon" onclick="toggleMenu('userMenu')">👤</div>
         </header>
         
-        <!-- Contenido principal -->
         <main>
-            <!-- Imagen del auto y texto debajo preguntando el destino -->
             <div class="car-image">
                 <img src="../assets/images/city-car-front-view-4490d2.webp" alt="Imagen de auto">
                 <p>¿Cuál es nuestro destino el día de hoy?</p>
             </div>
             
-            <!-- Contenedor para las acciones de reservar y ver reservas -->
             <div class="actions">
-                <!-- Acción para reservar carro -->
-                <div class="action">
+                <div id="reservarCarroAction" class="action">
                     <span>🚗</span>
                     <p>RESERVAR CARRO</p>
                 </div>
-                
-                <!-- Acción para ver reservas -->
-                <div class="action">
+                <div id="verReservasAction" class="action">
                     <span>📅</span>
                     <p>MIS RESERVAS</p>
                 </div>
             </div>
         </main>
 
-        <!-- Menú de navegación oculto inicialmente -->
         <aside id="navMenu" class="menu left-menu">
             <ul>
-                <!-- Opciones del menú de navegación -->
                 <li><span>🧍</span> Pasajero</li>
                 <li><span>📅</span> Mis Reservas</li>
                 <li><span>🚗</span> Reservar Carro</li>
@@ -63,17 +42,13 @@
             </ul>
         </aside>
 
-        <!-- Menú de usuario oculto inicialmente -->
         <aside id="userMenu" class="menu right-menu">
             <ul>
-                <!-- Opciones de información del usuario -->
                 <li><span>👤</span> Nombre de usuario</li>
                 <li><span>✉️</span> Correo del usuario</li>
                 <li><span>📞</span> Teléfono</li>
                 <li><span>🎓</span> ID Universitario</li>
             </ul>
-            
-            <!-- Botones de acción dentro del menú de usuario -->
             <div class="actions">
                 <button>Editar Datos</button>
                 <button>Cerrar Sesión</button>

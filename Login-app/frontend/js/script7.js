@@ -35,7 +35,6 @@ function editarDatos() {
 function cerrarSesion() {
     window.location.href = 'index3.html'; // Redirige a index3.html
 }
-
 // Asignación de eventos a los botones de acción
 document.addEventListener('DOMContentLoaded', function() {
     const editarBtn = document.querySelector('.actions button:first-child');

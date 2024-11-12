@@ -1,14 +1,13 @@
-document.getElementById('conductor').addEventListener('click', async () => {
-    const response = await fetch('/verificar-rol', { method: 'POST' });
-    const result = await response.json();
-
-    if (result.success) {
-        window.location.href = result.redirectUrl;
-    } else {
-        alert('Error al verificar el rol');
-    }
+document.getElementById('conductor').addEventListener('click', () => {
+    // Guardar el rol de conductor en sessionStorage
+    sessionStorage.setItem('role', 'conductor');
+    // Redirigir al usuario a la página de registro
+    window.location.href = 'index2.html';
 });
 
 document.getElementById('pasajero').addEventListener('click', () => {
-    window.location.href = '/passenger/index.html';
+    // Guardar el rol de pasajero en sessionStorage
+    sessionStorage.setItem('role', 'pasajero');
+    // Redirigir al usuario a la página de registro
+    window.location.href = 'index2.html';
 });

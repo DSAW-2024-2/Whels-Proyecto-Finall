@@ -5,6 +5,21 @@
     box-sizing: border-box;
 }
 
+/* styles8.css: Estilos específicos de index8.html */
+
+.main-container {
+    max-width: 500px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+/* Estilo único para el título en index8.html */
+h2 {
+    color: #4CAF50;
+    font-size: 24px;
+}
+
 body {
     font-family: Arial, sans-serif;
     background: linear-gradient(to bottom right, #2f5061, #193628);
@@ -16,7 +31,9 @@ body {
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background: linear-gradient(135deg, #0f3b57, #184e77);
+        background: linear-gradient(to bottom right, #2f5061, #193628);
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 /* Main Container */
@@ -135,3 +152,5 @@ button:hover {
 .hidden {
     display: none;
 }
+
+
