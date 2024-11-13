@@ -4,13 +4,13 @@ const sitpApiUrl = 'https://gis.transmilenio.gov.co/arcgis/rest/services/SITP/co
 
 // Coordenadas específicas para cada ruta y un radio de búsqueda ajustado
 const routeCoordinates = {
-    "Universidad La Sabana": { x: -74.0479, y: 4.8601, radius: 0.05 },
-    "Boyacá": { x: -74.1065, y: 4.7101, radius: 0.05 },
-    "Novena": { x: -74.0705, y: 4.6545, radius: 0.05 },
-    "Portal": { x: -74.1500, y: 4.6637, radius: 0.05 },
-    "Séptima": { x: -74.0614, y: 4.6586, radius: 0.05 },
-    "Suba": { x: -74.0822, y: 4.7424, radius: 0.05 },
-    "Autopista": { x: -74.0588, y: 4.7109, radius: 0.05 }
+    "Universidad La Sabana": { x: -74.0419, y: 4.7255, radius: 0.05 },
+    "Boyacá": { x: -74.1194, y: 4.6979, radius: 0.05 },
+    "Novena": { x: -74.0712, y: 4.6364, radius: 0.05 },
+    "Portal": { x: -74.1417, y: 4.6492, radius: 0.05 }, //corregir
+    "Séptima": { x: -74.0622, y: 4.6450, radius: 0.05 },
+    "Suba": { x: -74.0905, y: 4.7312, radius: 0.05 },
+    "Autopista": { x: -74.0724, y: 4.7002, radius: 0.05 }
 };
 
 // Función para cargar estaciones basadas en la API de TransMilenio y, si es necesario, usar la API de SITP como respaldo
