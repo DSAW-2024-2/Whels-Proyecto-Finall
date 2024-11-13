@@ -59,6 +59,15 @@ header {
     cursor: pointer; /* Indica que son clicables */
 }
 
+header h1 {
+    font-size: 18px;
+}
+header span {
+    font-weight: normal;
+    font-size: 14px;
+}
+
+
 .menu {
     position: fixed;
     top: 0;
@@ -237,6 +246,9 @@ button:hover {
         width: 100%; /* Cambia el ancho al 100% en pantallas pequeñas */
         padding: 15px;
         height: 100%;
+    }
+    .menu {
+        width: 90%;
     }
     .logo{
         width: 100px;
