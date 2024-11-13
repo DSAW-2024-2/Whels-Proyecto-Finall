@@ -59,6 +59,80 @@ header {
     border-radius: 10px;
 }
 
+.menu {
+    position: fixed;
+    top: 0;
+    background-color: rgba(27, 43, 60, 0.9);
+    width: 250px;
+    height: 100vh;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    color: white;
+    z-index: 1000;
+    box-shadow: 3px 0px 5px rgba(0, 0, 0, 0.5);
+    padding-top: 30px;
+}
+
+.menu.active {
+    transform: translateX(0);
+}
+
+.left-menu {
+    left: 0;
+}
+
+.right-menu {
+    right: 0;
+    transform: translateX(100%);
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu ul li {
+    padding: 15px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+}
+
+.menu ul li:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.menu ul li span {
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+.menu .actions {
+    padding: 20px;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.menu .actions button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: 16px;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+.menu .actions button:hover {
+    background-color: #45a049;
+}
+
 .logo {
     font-size: 1.5rem;
 }

@@ -105,73 +105,86 @@ main {
 .action p {
     margin-top: 5px;
 }
-
-/* Menú lateral oculto inicialmente */
 .menu {
-    position: absolute;
+    position: fixed;
+    top: 0;
     background-color: rgba(27, 43, 60, 0.9);
-    width: 100%;
-    max-width: 220px; /* Ancho máximo del menú */
-    padding: 15px;
-    color: #fff;
-    display: flex;
-    flex-direction: column;
-    transition: transform 0.3s ease; /* Animación de despliegue */
-    z-index: 10; /* Asegura que esté sobre otros elementos */
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    width: 250px;
+    height: 100vh;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    color: white;
+    z-index: 1000;
+    box-shadow: 3px 0px 5px rgba(0, 0, 0, 0.5);
+    padding-top: 30px;
 }
 
-/* Posiciones iniciales de los menús izquierdo y derecho */
+.menu.active {
+    transform: translateX(0);
+}
+
 .left-menu {
-    top: 40px;
-    left: 5px;
-    transform: translateX(-120%); /* Oculto a la izquierda */
+    left: 0;
 }
 
 .right-menu {
-    top: 40px;
-    right: 5px;
-    transform: translateX(120%); /* Oculto a la derecha */
+    right: 0;
+    transform: translateX(100%);
 }
 
-/* Lista de opciones en el menú */
 .menu ul {
-    list-style: none; /* Elimina viñetas */
-    margin-bottom: 10px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
-/* Opciones individuales */
-.menu li {
+.menu ul li {
+    padding: 15px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     display: flex;
     align-items: center;
-    font-size: 16px;
-    padding: 10px 0;
 }
 
-/* Iconos y texto en cada opción */
-.menu li span {
+.menu ul li:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.menu ul li span {
     margin-right: 10px;
-    font-size: 20px;
+    font-size: 18px;
 }
 
-/* Botones dentro del menú de usuario */
-.actions button {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    margin-top: 10px;
-    background-color: #0e072b88;
-    color: #fff;
+.menu .actions {
+    display: flex;
+    flex-direction: column; /* Coloca los botones en columna */
+    padding: 20px;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    gap: 10px; /* Añade un espacio entre los botones */
+}
+
+.menu .actions button {
+    background-color: #4CAF50;
+    font-family: 'Fugaz One', cursive;
+    color: white;
     border: none;
+    padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
+    margin-top: 0; /* Elimina el margen superior individual */
+    font-size: 16px;
+    width: 100%;
+    transition: background-color 0.3s ease;
 }
 
-/* Efecto de cambio de color al pasar el mouse */
-.actions button:hover {
-    background-color: #FF6B6B;
+
+.menu .actions button:hover {
+    background-color: #45a049;
 }
+
+
 
 /* Clase para mostrar el menú cuando está activo */
 .show {

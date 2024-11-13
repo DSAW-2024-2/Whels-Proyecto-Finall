@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,11 +10,39 @@
 <body>
     <div class="background">
         <div class="main-container">
+            <!-- Header with Menu Icons -->
             <header>
+                <div class="menu-icon" onclick="toggleMenu('navMenu')">☰</div>
                 <div class="logo">WHEELS <span>Pasajero</span></div>
-                <div class="menu-icon">☰</div>
+                <div class="user-icon" onclick="toggleMenu('userMenu')">👤</div>
             </header>
 
+            <!-- Nav Menu -->
+            <aside id="navMenu" class="menu left-menu">
+                <ul>
+                    <li><span>🧍</span> Conductor</li>
+                    <li><span>📅</span> Mis Viajes</li>
+                    <li><span>🚗</span> Nuevo Viaje</li>
+                    <li><span>🏠</span> Home</li>
+                </ul>
+            </aside>
+
+            <!-- User Menu -->
+            <aside id="userMenu" class="menu right-menu">
+                <ul>
+                    <li><span>👤</span> Nombre de usuario</li>
+                    <li><span>✉️</span> Correo del usuario</li>
+                    <li><span>📞</span> Teléfono</li>
+                    <li><span>🎓</span> ID Universitario</li>
+                    <li><span>🚗</span> Info Carro</li>
+                </ul>
+                <div class="actions">
+                    <button>Editar Datos</button>
+                    <button>Cerrar Sesión</button>
+                </div>
+            </aside>
+
+            <!-- Content -->
             <div class="content">
                 <!-- Route Selection View -->
                 <div id="route-selection" class="view active">
@@ -98,6 +126,13 @@
             </div>
         </div>
     </div>
+
+    <!-- JavaScript for toggling menus -->
     <script src="../js/script8.js"></script>
+    <script>
+        function toggleMenu(menuId) {
+            document.getElementById(menuId).classList.toggle('active');
+        }
+    </script>
 </body>
 </html>
