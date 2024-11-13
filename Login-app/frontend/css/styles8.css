@@ -17,10 +17,6 @@
 }
 
 /* Estilo único para el título en index8.html */
-h2 {
-    color: #4CAF50;
-    font-size: 24px;
-}
 
 body {
     font-family: Arial, sans-serif;
@@ -57,6 +53,10 @@ header {
     Background-color: #2A557B;
     color: white;
     border-radius: 10px;
+}
+.menu-icon, .user-icon {
+    font-size: 24px;
+    cursor: pointer; /* Indica que son clicables */
 }
 
 .menu {
@@ -237,5 +237,9 @@ button:hover {
         width: 100%; /* Cambia el ancho al 100% en pantallas pequeñas */
         padding: 15px;
         height: 100%;
+    }
+    .logo{
+        width: 100px;
+        height: 70px;
     }
 }
