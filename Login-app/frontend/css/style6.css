@@ -108,7 +108,7 @@ main {
 .menu {
     position: fixed;
     top: 0;
-    background-color: rgba(27, 43, 60, 0.9);
+    background: linear-gradient(to bottom right, #2f5061, #193628);
     width: 250px;
     height: 100vh;
     transform: translateX(-100%);
