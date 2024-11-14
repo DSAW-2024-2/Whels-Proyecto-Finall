@@ -159,7 +159,11 @@ header span {
 h2 {
     font-size: 1.2rem;
     margin-bottom: 1rem;
-    color: #3b5a81;
+    color: #358511;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
 }
 
 /* Route List and Trip List Styling */
