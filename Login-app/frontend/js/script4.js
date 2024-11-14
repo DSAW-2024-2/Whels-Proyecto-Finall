@@ -1,13 +1,12 @@
-import { registrarCarro } from './backend/carros.js';
+import { registrarCarro } from '../../backend/carros.js';
 
+// Manejo del envío del formulario
 document.getElementById("car-register-form").addEventListener("submit", async function(event) {
     event.preventDefault();
 
     // Obtener valores del formulario
-    const id_usuario = sessionStorage.getItem("user_id"); // ID del usuario almacenado en sesión
-    const username = document.getElementById("username").value;
+    const id_usuario = sessionStorage.getItem("user_id"); // ID del usuario autenticado
     const placa = document.getElementById("placa").value;
-    const foto = document.getElementById("foto").files[0];
     const capacidad = document.getElementById("capacidad").value;
     const soat = document.getElementById("soat").value;
     const marca = document.getElementById("marca").value;
@@ -42,45 +41,14 @@ document.getElementById("car-register-form").addEventListener("submit", async fu
         return;
     }
 
-    // Enviar datos a Firebase usando registrarCarro si estamos usando Firestore
-    const result = await registrarCarro(id_usuario, placa, marca, modelo, año);
+    // Llamar a registrarCarro sin el campo de imagen
+    const result = await registrarCarro(id_usuario, placa, marca, modelo, año, capacidad, soat);
     if (result.status === 'success') {
         alert(result.message);
+
+        // Redirigir al menú de conductor
+        window.location.href = "index7.html"; // Cambia "menu_conductor.html" a la URL correcta del menú de conductor
     } else {
         alert(result.message);
-    }
-
-    // Enviar datos a un servidor externo si es necesario
-    // (solo si tienes un servidor adicional en localhost)
-    const token = localStorage.getItem('token');
-    if (token && foto) {
-        const formData = new FormData();
-        formData.append('username', username);
-        formData.append('placa', placa);
-        formData.append('foto', foto);
-        formData.append('capacidad', capacidad);
-        formData.append('soat', soat);
-        formData.append('marca', marca);
-        formData.append('modelo', modelo);
-
-        try {
-            const response = await fetch('http://localhost:3000/car/registerCar', {
-                method: 'POST',
-                headers: {
-                    'Authorization': `Bearer ${token}`
-                },
-                body: formData
-            });
-
-            if (response.ok) {
-                alert("¡Carro registrado exitosamente en el servidor externo!");
-            } else {
-                const error = await response.json();
-                alert(`Error al registrar el carro en el servidor: ${error.message}`);
-            }
-        } catch (error) {
-            console.error("Error de conexión:", error);
-            alert("Hubo un problema al conectar con el servidor externo.");
-        }
     }
 });

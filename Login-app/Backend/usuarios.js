@@ -20,19 +20,25 @@ export async function registrarUsuario(nombre, apellido, username, password, ema
 
 // Función para verificar las credenciales de inicio de sesión
 export async function iniciarSesion(username, password) {
-    const querySnapshot = await getDocs(collection(db, "usuarios"));
-    let usuarioEncontrado = false;
+    try {
+        const querySnapshot = await getDocs(collection(db, "usuarios"));
+        let usuarioEncontrado = false;
 
-    querySnapshot.forEach((doc) => {
-        const data = doc.data();
-        if (data.username === username && data.password === password) {
-            usuarioEncontrado = true;
+        querySnapshot.forEach((doc) => {
+            const data = doc.data();
+            if (data.username === username && data.password === password) {
+                usuarioEncontrado = true;
+            }
+        });
+
+        if (usuarioEncontrado) {
+            return { status: 'success', message: 'Inicio de sesión exitoso' };
+        } else {
+            return { status: 'error', message: 'Credenciales incorrectas' };
         }
-    });
-
-    if (usuarioEncontrado) {
-        return { status: 'success', message: 'Inicio de sesión exitoso' };
-    } else {
-        return { status: 'error', message: 'Credenciales incorrectas' };
+    } catch (error) {
+        console.error("Error al iniciar sesión: ", error);
+        return { status: 'error', message: 'Error al verificar las credenciales' };
     }
 }
+
