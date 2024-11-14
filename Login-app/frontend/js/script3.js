@@ -1,3 +1,5 @@
+import { iniciarSesion } from '../../backend/usuarios.js';
+
 document.getElementById('login-form').addEventListener('submit', async function(e) {
     e.preventDefault();
 
@@ -17,7 +19,23 @@ document.getElementById('login-form').addEventListener('submit', async function(
         return;
     }
 
-    // Si las validaciones son correctas, hacer el login
+    // Si las validaciones son correctas, hacer el login usando el método interno con Firebase
+    try {
+        const result = await iniciarSesion(username, password);
+        if (result.status === 'success') {
+            alert(result.message);
+            // Redirigir a la página principal o dashboard si el inicio de sesión es exitoso
+            window.location.href = "/Login-app/frontend/html/Index5.html";
+        } else {
+            alert(result.message); // Muestra un mensaje de error si las credenciales son incorrectas
+        }
+    } catch (error) {
+        console.error('Error en la solicitud de inicio de sesión:', error);
+        alert('Hubo un problema con la solicitud. Intenta más tarde.');
+    }
+
+    /*
+    // Bloque de código para el inicio de sesión en el backend de Vercel (comentado)
     try {
         const response = await fetch('https://tu-backend-en-vercel.vercel.app/auth/login', {  // Cambia la URL al backend
             method: 'POST',
@@ -44,4 +62,5 @@ document.getElementById('login-form').addEventListener('submit', async function(
         console.error('Error en la solicitud de inicio de sesión:', error);
         alert('Hubo un problema con la solicitud. Intenta más tarde.');
     }
+    */
 });

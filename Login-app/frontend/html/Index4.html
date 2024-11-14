@@ -14,17 +14,17 @@
                 <img src="../assets/images/Logo.png" alt="Logo de registro" class="register-icon">
                 <h2>NUEVO CARRO</h2>
             </div>
-            <form id="car-register-form" enctype="multipart/form-data">
-                <input type="text" id="username" placeholder="Usuario" required><br>
-                <input type="text" id="placa" placeholder="Placa del Vehículo" required><br>
-                <input type="number" id="capacidad" placeholder="Capacidad del Vehículo" required><br>
-                <input type="text" id="soat" placeholder="Número de SOAT" required><br>
-                <input type="text" id="marca" placeholder="Marca" required><br>
-                <input type="text" id="modelo" placeholder="Modelo" required><br>
-                <button type="submit">Registrar Coche</button>
-            </form>
+            <form id="car-register-form">
+                <input type="text" id="placa" placeholder="Placa del vehículo" required>
+                <input type="text" id="marca" placeholder="Marca" required>
+                <input type="text" id="modelo" placeholder="Modelo" required>
+                <input type="number" id="año" placeholder="Año" required>
+                <input type="text" id="capacidad" placeholder="Capacidad del vehículo" required>
+                <input type="text" id="soat" placeholder="Número de SOAT" required>
+                <button type="submit">Registrar Carro</button>
+            </form>            
         </div>
     </div>
-    <script src="/Login-nosql-app/frontend/js/script4.js"></script>
+    <script src="../js/script4.js" type="module"></script>
 </body>
 </html>
