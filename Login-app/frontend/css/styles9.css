@@ -20,6 +20,15 @@ body {
     background-attachment: fixed;
 }
 
+.main-container {
+    max-width: 500px;
+    font-family: 'Fugaz One', cursive !important;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    
+}
+
 /* Main Container */
 .main-container {
     background-color: white;
@@ -35,7 +44,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 1rem;
-    Background-color: #2A557B;
+    background-color: #358511;
     color: white;
     border-radius: 10px;
 }
@@ -111,7 +120,7 @@ header span {
 }
 
 .menu .actions button {
-    background-color: #4CAF50;
+    background-color: #358511;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -127,9 +136,6 @@ header span {
     background-color: #45a049;
 }
 
-.logo {
-    font-size: 1.5rem;
-}
 
 .menu-icon {
     font-size: 1.5rem;
@@ -166,7 +172,7 @@ h2 {
 .trip-list li {
     padding: 0.5rem 1rem;
     margin: 0.5rem 0;
-    background-color: #4f729b;
+    background-color: #358511;
     border-radius: 5px;
     cursor: pointer;
     display: flex;
@@ -181,7 +187,7 @@ h2 {
 
 /* Button Styling */
 button {
-    background-color: #4f729b;
+    background-color: #358511;
     color: white;
     border: none;
     padding: 0.5rem 1rem;
@@ -192,27 +198,25 @@ button {
 }
 
 button:hover {
-    background-color: #3b5a81;
+    background-color: #306b32; /* Green */
 }
 /* Adjusted header and button colors for the driver interface */
-header {
-    background-color: #4CAF50; /* Green */
-    color: white;
-}
 
 button {
-    background-color: #4CAF50; /* Green */
+    background-color: #358511;
     color: white;
     border: none;
     padding: 0.5rem 1rem;
     border-radius: 5px;
     cursor: pointer;
     margin-top: 1rem;
+    font-family: 'Fugaz One', cursive !important;
     width: 100%;
 }
 
 button:hover {
     background-color: #388E3C; /* Darker green */
+    font-family: 'Fugaz One', cursive !important;
 }
 
 /* New styling for trip form */
@@ -234,4 +238,21 @@ form input {
 
 .hidden {
     display: none;
+}
+
+
+@media (max-width: 500px) {
+    
+    .main-container {
+        width: 100%; /* Cambia el ancho al 100% en pantallas pequeñas */
+        padding: 15px;
+        height: 100%;
+    }
+    .menu {
+        width: 90%;
+    }
+    .logo{
+        width: 100px;
+        height: 70px;
+    }
 }

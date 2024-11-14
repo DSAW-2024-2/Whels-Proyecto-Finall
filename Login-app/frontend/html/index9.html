@@ -4,16 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wheels Conductor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/styles9.css">
 </head>
 <body>
     <div class="background">
         <div class="main-container">
+            <!-- Header with Menu Icons -->
             <header>
                 <div class="menu-icon" onclick="toggleMenu('navMenu')">☰</div>
                 <h1>WHEELS <span>Conductor</span></h1>
                 <div class="user-icon" onclick="toggleMenu('userMenu')">👤</div>
             </header>
+
+            <!-- Nav Menu -->
+            <aside id="navMenu" class="menu left-menu">
+                <ul>
+                    <li><span>🧍</span> Conductor</li>
+                    <li><span>📅</span> Mis Viajes</li>
+                    <li><span>🚗</span> Nuevo Viaje</li>
+                    <li><span>🏠</span> Home</li>
+                </ul>
+            </aside>
+
+            <!-- User Menu -->
+            <aside id="userMenu" class="menu right-menu">
+                <ul>
+                    <li><span>👤</span> Nombre de usuario</li>
+                    <li><span>✉️</span> Correo del usuario</li>
+                    <li><span>📞</span> Teléfono</li>
+                    <li><span>🎓</span> ID Universitario</li>
+                    <li><span>🚗</span> Info Carro</li>
+                </ul>
+                <div class="actions">
+                    <button>Editar Datos</button>
+                    <button>Cerrar Sesión</button>
+                </div>
+            </aside>
+
 
             <div class="content">
                 <!-- Route Selection View -->
