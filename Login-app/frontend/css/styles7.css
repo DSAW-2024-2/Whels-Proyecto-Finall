@@ -204,6 +204,9 @@ main {
         padding: 15px;
         height: 100%;
     }
+    .car-image{
+        padding-bottom: 75px;
+    }
 }
 
 

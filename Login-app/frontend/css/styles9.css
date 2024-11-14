@@ -1,3 +1,4 @@
+/* General Reset */
 * {
     margin: 0;
     padding: 0;
@@ -7,6 +8,7 @@
 body {
     font-family: Arial, sans-serif;
     background: linear-gradient(to bottom right, #2f5061, #193628);
+    overflow-y: hidden; /* Para evitar el scroll en la página principal y centralizar todo en la main-container */
 }
 
 /* Background */
@@ -20,25 +22,20 @@ body {
     background-attachment: fixed;
 }
 
+/* Main Container */
 .main-container {
+    width: 90%;
     max-width: 500px;
+    overflow-y: auto; /* Permite desplazamiento vertical */
+    overflow-x: hidden; /* Oculta desplazamiento horizontal */
     font-family: 'Fugaz One', cursive !important;
     background-color: #ffffff;
     border-radius: 10px;
-    padding: 20px;
-    
-}
-
-/* Main Container */
-.main-container {
-    background-color: white;
-    width: 90%;
-    max-width: 500px;
-    border-radius: 16px;
+    padding: 20px;        
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
-    overflow: hidden;
 }
 
+/* Header Styling */
 header {
     display: flex;
     justify-content: space-between;
@@ -48,9 +45,10 @@ header {
     color: white;
     border-radius: 10px;
 }
+
 .menu-icon, .user-icon {
     font-size: 24px;
-    cursor: pointer; /* Indica que son clicables */
+    cursor: pointer;
 }
 
 header h1 {
@@ -61,7 +59,7 @@ header span {
     font-size: 14px;
 }
 
-
+/* Menu Styling */
 .menu {
     position: fixed;
     top: 0;
@@ -74,6 +72,7 @@ header span {
     z-index: 1000;
     box-shadow: 3px 0px 5px rgba(0, 0, 0, 0.5);
     padding-top: 30px;
+    overflow-y: auto; /* Permite desplazamiento en el menú si es necesario */
 }
 
 .menu.active {
@@ -89,6 +88,7 @@ header span {
     transform: translateX(100%);
 }
 
+/* Menu List */
 .menu ul {
     list-style: none;
     padding: 0;
@@ -119,6 +119,7 @@ header span {
     border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
 
+/* Button Styling */
 .menu .actions button {
     background-color: #358511;
     color: white;
@@ -136,18 +137,11 @@ header span {
     background-color: #45a049;
 }
 
-
-.menu-icon {
-    font-size: 1.5rem;
-}
-
-
-/* Content Container */
+/* Content Styling */
 .content {
     padding: 1rem;
 }
 
-/* View Styling */
 .view {
     display: none;
 }
@@ -156,6 +150,7 @@ header span {
     display: block;
 }
 
+/* Title Styling */
 h2 {
     font-size: 1.2rem;
     margin-bottom: 1rem;
@@ -163,10 +158,9 @@ h2 {
     display: flex;
     align-items: center;
     justify-content: center;
-    
 }
 
-/* Route List and Trip List Styling */
+/* Route and Trip List Styling */
 .route-list,
 .trip-list {
     list-style: none;
@@ -189,41 +183,7 @@ h2 {
     margin-right: 10px;
 }
 
-/* Button Styling */
-button {
-    background-color: #358511;
-    color: white;
-    border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 1rem;
-    width: 100%;
-}
-
-button:hover {
-    background-color: #306b32; /* Green */
-}
-/* Adjusted header and button colors for the driver interface */
-
-button {
-    background-color: #358511;
-    color: white;
-    border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 1rem;
-    font-family: 'Fugaz One', cursive !important;
-    width: 100%;
-}
-
-button:hover {
-    background-color: #388E3C; /* Darker green */
-    font-family: 'Fugaz One', cursive !important;
-}
-
-/* New styling for trip form */
+/* Form Styling */
 form {
     display: flex;
     flex-direction: column;
@@ -244,18 +204,17 @@ form input {
     display: none;
 }
 
-
+/* Media Query for Mobile */
 @media (max-width: 500px) {
-    
     .main-container {
-        width: 100%; /* Cambia el ancho al 100% en pantallas pequeñas */
+        width: 100%;
         padding: 15px;
         height: 100%;
     }
     .menu {
         width: 90%;
     }
-    .logo{
+    .logo {
         width: 100px;
         height: 70px;
     }
