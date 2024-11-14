@@ -24,3 +24,28 @@ function closeModal() {
         modal.classList.add("hidden");
     });
 }
+// Función para alternar la visibilidad de un menú
+function toggleMenu(menuId) {
+    const menu = document.getElementById(menuId);
+    menu.classList.toggle('active');
+}
+
+// Evento para cerrar los menús cuando se hace clic fuera de ellos
+document.addEventListener('click', function(event) {
+    const navMenu = document.getElementById('navMenu');
+    const userMenu = document.getElementById('userMenu');
+    const isClickInsideNavMenu = navMenu.contains(event.target);
+    const isClickInsideUserMenu = userMenu.contains(event.target);
+    const isClickOnMenuIcon = event.target.classList.contains('menu-icon');
+    const isClickOnUserIcon = event.target.classList.contains('user-icon');
+
+    // Cierra el menú de navegación si el clic es fuera de él y no en el icono
+    if (!isClickInsideNavMenu && !isClickOnMenuIcon) {
+        navMenu.classList.remove('active');
+    }
+
+    // Cierra el menú de usuario si el clic es fuera de él y no en el icono
+    if (!isClickInsideUserMenu && !isClickOnUserIcon) {
+        userMenu.classList.remove('active');
+    }
+});
