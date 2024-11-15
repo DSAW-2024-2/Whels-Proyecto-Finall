@@ -1,39 +1,35 @@
-import { iniciarSesion } from '../../backend/usuarios.js';
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.1.3/firebase-app.js";
+import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.1.3/firebase-auth.js";
+
+// Configuración de Firebase
+const firebaseConfig = {
+    apiKey: "AIzaSyCoCyh3VoVptjJaGwslhqFYoI9yvikPxLM",
+    authDomain: "whelsapp.firebaseapp.com",
+    projectId: "whelsapp",
+    storageBucket: "whelsapp.firebasestorage.app",
+    messagingSenderId: "75156650165",
+    appId: "1:75156650165:web:6104370bb47ed4bf6f26fc",
+    measurementId: "G-0M5KV57G9G"
+  };
+
+// Inicializa Firebase
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
 
 document.getElementById('login-form').addEventListener('submit', async function(e) {
     e.preventDefault();
 
-    const username = document.getElementById('username').value;
+    const email = document.getElementById('username').value;  // Cambiado a "email"
     const password = document.getElementById('password').value;
 
-    // Validación del nombre de usuario (solo letras)
-    const usernamePattern = /^[A-Za-z]+$/;
-    if (!usernamePattern.test(username)) {
-        alert("El nombre de usuario solo debe contener letras");
-        return;
-    }
-
-    // Validación de la contraseña (mínimo 6 caracteres)
-    if (password.length < 6) {
-        alert("La contraseña debe tener al menos 6 caracteres");
-        return;
-    }
-
-    // Si las validaciones son correctas, hacer el login usando el método interno con Firebase
     try {
-        const result = await iniciarSesion(username, password);
-        if (result.status === 'success') {
-            alert(result.message);
-            // Redirigir a la página principal o dashboard si el inicio de sesión es exitoso
-            window.location.href = "/Login-app/frontend/html/Index5.html";
-        } else {
-            alert(result.message); // Muestra un mensaje de error si las credenciales son incorrectas
-        }
+        const userCredential = await signInWithEmailAndPassword(auth, email, password);
+        alert("Inicio de sesión exitoso");
+        window.location.href = '/Login-app/frontend/html/Index5.html'; // Ruta completa desde la raíz del servidor
     } catch (error) {
-        console.error('Error en la solicitud de inicio de sesión:', error);
-        alert('Hubo un problema con la solicitud. Intenta más tarde.');
+        alert("Error al iniciar sesión: " + error.message);
     }
-
+        
     /*
     // Bloque de código para el inicio de sesión en el backend de Vercel (comentado)
     try {

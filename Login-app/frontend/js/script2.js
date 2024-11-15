@@ -45,13 +45,15 @@ document.getElementById("register-form").addEventListener("submit", async functi
         return;
     }
 
-    // Registro en Firebase usando registrarUsuario
-    const result = await registrarUsuario(username, lastname, username, password, email); // Reemplazado nombre y apellido
+    // Obtén el rol desde sessionStorage
+    const role = sessionStorage.getItem('role');
+
+    // Registro en Firebase usando registrarUsuario (incluyendo el campo `phone`)
+    const result = await registrarUsuario(username, lastname, studentId, password, email, phone);
     if (result.status === 'success') {
         alert(result.message);
 
         // Redirigir según el rol
-        const role = sessionStorage.getItem('role');
         if (role === 'pasajero') {
             window.location.href = 'index8.html'; // Página principal del pasajero
         } else if (role === 'conductor') {

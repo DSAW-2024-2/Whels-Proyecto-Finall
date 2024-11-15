@@ -1,20 +1,22 @@
-// Importa las funciones necesarias de Firebase
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
-import { getFirestore } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.1.3/firebase-app.js";
+import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.1.3/firebase-analytics.js";
+import { getFirestore } from "https://www.gstatic.com/firebasejs/9.1.3/firebase-firestore.js";
 
 // Configuración de Firebase
 const firebaseConfig = {
-    apiKey: "AIzaSyCoCyh3VoVtpjJaGwslhqFYtoIyyikPxLM",
+    apiKey: "AIzaSyCoCyh3VoVptjJaGwslhqFYoI9yvikPxLM",
     authDomain: "whelsapp.firebaseapp.com",
     projectId: "whelsapp",
-    storageBucket: "whelsapp.appspot.com",
+    storageBucket: "whelsapp.appspot.com",  // Asegúrate de que esté corregido aquí
     messagingSenderId: "75156650165",
     appId: "1:75156650165:web:6104370bb47ed4bf6f26fc",
-    measurementId: "G-M5KV5769GG"
+    measurementId: "G-0M5KV57G9G"
 };
 
-// Inicializa Firebase
+// Inicializar Firebase
 const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
 
-// Exporta solo Firestore, ya que Storage ya no es necesario
-export const db = getFirestore(app);
+// Inicializar Firestore y exportarlo como `db`
+const db = getFirestore(app);
+export { db };
