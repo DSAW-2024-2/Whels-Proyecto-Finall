@@ -119,21 +119,51 @@ header span {
 }
 
 /* Button Styling */
-.menu .actions button {
+button, form button[type="button"] {
     background-color: #358511;
     color: white;
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
-    margin-top: 10px;
     font-size: 16px;
-    width: 100%;
-    transition: background-color 0.3s ease;
+    font-weight: bold;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 10px;
 }
 
-.menu .actions button:hover {
-    background-color: #45a049;
+/* Hover efecto general para botones */
+button:hover, form button[type="button"]:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Botón específico para "Nuevo Viaje" */
+button.nuevo-viaje {
+    background-color: #28a745; /* Color verde */
+}
+
+button.nuevo-viaje:hover {
+    background-color: #218838; /* Verde más oscuro en hover */
+}
+
+/* Botón específico para "Volver" */
+button.volver {
+    background-color: #333; /* Color negro */
+}
+
+button.volver:hover {
+    background-color: #000; /* Negro más oscuro en hover */
+}
+
+/* Botón adicional: "Cerrar Sesión" */
+button.cerrar-sesion {
+    background-color: #dc3545; /* Rojo */
+}
+
+button.cerrar-sesion:hover {
+    background-color: #c82333; /* Rojo más oscuro */
 }
 
 /* Content Styling */
@@ -202,6 +232,30 @@ form input {
 .hidden {
     display: none;
 }
+
+/* Estilo para los elementos de la lista de rutas con animación */
+.route-list li {
+    padding: 0.5rem 1rem;
+    margin: 0.5rem 0;
+    background-color: #358511;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transiciones para animación */
+}
+
+/* Hover efecto para la lista de rutas */
+.route-list li:hover {
+    background-color: #218838; /* Color verde más oscuro en hover */
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidad */
+}
+
 
 /* Media Query for Mobile */
 @media (max-width: 500px) {

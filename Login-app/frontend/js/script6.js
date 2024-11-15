@@ -51,7 +51,7 @@ function reservarCarro() {
 
 // Function to handle "Mis Reservas" action (placeholder)
 function verReservas() {
-    alert("Funcionalidad para ver reservas próximamente");
+    window.location.href = 'index10.html'; // Redirect to the car reservation page
 }
 
 // Assign event listeners to action buttons

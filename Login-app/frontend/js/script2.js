@@ -55,12 +55,12 @@ document.getElementById("register-form").addEventListener("submit", async functi
 
         // Redirigir según el rol
         if (role === 'pasajero') {
-            window.location.href = '/home/pasajero'; // Página principal del pasajero
+            window.location.href = '/Login-app/frontend/html/Index6.html'; // Página principal del pasajero
         } else if (role === 'conductor') {
-            window.location.href = '/home/conductor'; // Página principal del conductor
+            window.location.href = 'index7.html'; // Página principal del conductor
         } else {
             alert('Error: Rol no seleccionado. Vuelve a seleccionar el rol.');
-            window.location.href = '/login'; // Redirigir a selección de rol si no está definido
+            window.location.href = '/Login-app/frontend/html/Index5.html'; // Redirigir a selección de rol si no está definido
         }
 
     } else {

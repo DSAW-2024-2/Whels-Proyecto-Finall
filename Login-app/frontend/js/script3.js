@@ -25,7 +25,7 @@ document.getElementById('login-form').addEventListener('submit', async function(
     try {
         const userCredential = await signInWithEmailAndPassword(auth, email, password);
         alert("Inicio de sesión exitoso");
-        window.location.href = '/login'; // Ruta completa desde la raíz del servidor
+        window.location.href = '/Login-app/frontend/html/Index5.html'; // Ruta completa desde la raíz del servidor
     } catch (error) {
         alert("Error al iniciar sesión: " + error.message);
     }

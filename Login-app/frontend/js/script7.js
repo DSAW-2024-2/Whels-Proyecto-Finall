@@ -35,16 +35,37 @@ function editarDatos() {
 function cerrarSesion() {
     window.location.href = 'index3.html'; // Redirige a index3.html
 }
+
+// Function to handle "Reservar Carro" action by redirecting to index8.html
+function nuevoviaje() {
+    window.location.href = 'index9.html'; // Redirect to the car reservation page
+}
+
+// Function to handle "Mis Reservas" action (placeholder)
+function misViajes() {
+    window.location.href = 'index11.html'; // Redirect to the car reservation page
+}
+
 // Asignación de eventos a los botones de acción
 document.addEventListener('DOMContentLoaded', function() {
     const editarBtn = document.querySelector('.actions button:first-child');
     const cerrarSesionBtn = document.querySelector('.actions button:last-child');
-
+    const nuevoviajeAction = document.querySelector('.actions .action:nth-child(1)');
+    const misViajesAction = document.querySelector('.actions .action:nth-child(2)');
+    
     if (editarBtn) {
         editarBtn.addEventListener('click', editarDatos);
     }
 
     if (cerrarSesionBtn) {
         cerrarSesionBtn.addEventListener('click', cerrarSesion);
+    }
+
+    if (nuevoviajeAction) {
+        nuevoviajeAction.addEventListener('click', nuevoviaje); // Cambiado a `nuevoviaje`
+    }
+    
+    if (misViajesAction) {
+        misViajesAction.addEventListener('click', misViajes);
     }
 });

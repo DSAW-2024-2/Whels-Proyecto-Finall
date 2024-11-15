@@ -1,14 +1,15 @@
 // Evento click para el botón de "Conductor"
 document.getElementById('btn-conductor').addEventListener('click', () => {
     // Verificar si el conductor tiene un carro registrado
-    if (!isCarRegistered()) {
-        alert("No tienes un carro registrado. Por favor registra un vehículo primero.");
-        return; // Detener si no hay carro registrado
-    }
+    //if (!isCarRegistered()) {
+   //     alert("No tienes un carro registrado. Por favor registra un vehículo primero.");
+   //     return; // Detener si no hay carro registrado
+   // }
     // Guardar el rol de conductor en sessionStorage
-    sessionStorage.setItem('role', 'conductor');
+   // sessionStorage.setItem('role', 'conductor');
     // Redirigir al usuario a la página de vista de conductor
-    window.location.href = '/home/conductor';
+    window.location.href = '/Login-app/frontend/html/index7.html';
+
 });
 
 // Evento click para el botón de "Pasajero"
@@ -16,7 +17,8 @@ document.getElementById('btn-pasajero').addEventListener('click', () => {
     // Guardar el rol de pasajero en sessionStorage
     sessionStorage.setItem('role', 'pasajero');
     // Redirigir al usuario a la página de vista de pasajero
-    window.location.href = '/home/pasajero';
+    window.location.href = '/Login-app/frontend/html/index6.html';
+
 });
 
 // Función para verificar si un carro está registrado

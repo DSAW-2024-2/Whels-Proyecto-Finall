@@ -234,6 +234,51 @@ button:hover {
     display: none;
 }
 
+/* Estilo para las listas de rutas y viajes con animación */
+.route-list li,
+.trip-list li {
+    padding: 0.5rem 1rem;
+    margin: 0.5rem 0;
+    background-color: #2A557B;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    font-family: 'Fugaz One', cursive !important;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Efecto hover para los botones de las listas */
+.route-list li:hover,
+.trip-list li:hover {
+    background-color: #4a78af;
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño en hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidad */
+}
+
+/* Botón de "Volver" con animación */
+button {
+    background-color: #2A557B;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Fugaz One', cursive !important;
+    margin-top: 1rem;
+    width: 100%;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background-color: #3b5a81;
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
 @media (max-width: 500px) {
     .main-container {
         width: 100%;
