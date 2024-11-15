@@ -1,13 +1,9 @@
 {
     "rewrites": [
-      { "source": "/login", "destination": "/frontend/html/Index5.html" },
-      { "source": "/register", "destination": "/frontend/html/index2.html" },
-      { "source": "/home", "destination": "/frontend/html/index8.html" },
-      { "source": "/conductor", "destination": "/frontend/html/vista_conductor.html" },
-      { "source": "/pasajero", "destination": "/frontend/html/vista_pasajero.html" }
-    ],
-    "redirects": [
-      { "source": "/old-home", "destination": "/home", "statusCode": 301 }
+      { "source": "/login", "destination": "/login-app/frontend/html/index5.html" },
+      { "source": "/register", "destination": "/login-app/frontend/html/index2.html" },
+      { "source": "/home/pasajero", "destination": "/login-app/frontend/html/index6.html" },
+      { "source": "/home/conductor", "destination": "/login-app/frontend/html/index7.html" }
     ]
   }
   

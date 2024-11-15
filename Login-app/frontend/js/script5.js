@@ -8,7 +8,7 @@ document.getElementById('btn-conductor').addEventListener('click', () => {
     // Guardar el rol de conductor en sessionStorage
     sessionStorage.setItem('role', 'conductor');
     // Redirigir al usuario a la página de vista de conductor
-    window.location.href = '/frontend/html/index7.html';
+    window.location.href = '/home/conductor';
 });
 
 // Evento click para el botón de "Pasajero"
@@ -16,7 +16,7 @@ document.getElementById('btn-pasajero').addEventListener('click', () => {
     // Guardar el rol de pasajero en sessionStorage
     sessionStorage.setItem('role', 'pasajero');
     // Redirigir al usuario a la página de vista de pasajero
-    window.location.href = '/Login-app/frontend/html/index6.html';
+    window.location.href = '/home/pasajero';
 });
 
 // Función para verificar si un carro está registrado
