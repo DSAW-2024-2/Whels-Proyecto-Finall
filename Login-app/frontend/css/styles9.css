@@ -6,7 +6,6 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
     background: linear-gradient(to bottom right, #2f5061, #193628);
     overflow-y: hidden; /* Para evitar el scroll en la página principal y centralizar todo en la main-container */
 }
