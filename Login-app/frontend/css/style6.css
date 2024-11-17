@@ -91,6 +91,7 @@ main {
     display: flex;
     justify-content: space-around; /* Espacio entre acciones */
     margin-top: 20px;
+    cursor: pointer;
 }
 
 /* Estilo individual para cada acción */
