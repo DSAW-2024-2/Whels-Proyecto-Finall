@@ -265,6 +265,14 @@ form input {
     font-size: 1.2rem; /* Ajusta el tamaño de la fuente si es necesario */
 }
 
+
+#trip-message {
+    text-align: center; /* Centra horizontalmente el texto */
+    margin: 0; /* Elimina márgenes adicionales */
+    font-size: 1.2rem; /* Ajusta el tamaño de la fuente si es necesario */
+}
+
+
 /* Media Query for Mobile */
 @media (max-width: 500px) {
     .main-container {
