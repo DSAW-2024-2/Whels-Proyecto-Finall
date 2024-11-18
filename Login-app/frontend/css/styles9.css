@@ -177,6 +177,8 @@ button.cerrar-sesion:hover {
 
 .view.active {
     display: block;
+    display: flex; /* Activa flexbox */
+    flex-direction: column; 
 }
 
 /* Title Styling */
@@ -231,6 +233,7 @@ form input {
 
 .hidden {
     display: none;
+    
 }
 
 /* Estilo para los elementos de la lista de rutas con animación */
@@ -255,6 +258,7 @@ form input {
     transform: scale(1.05); /* Aumenta ligeramente el tamaño */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidad */
 }
+
 
 
 /* Media Query for Mobile */
