@@ -64,17 +64,23 @@
                     <p>Ruta seleccionada: <span id="selected-route"></span></p>
                     <form>
                         <label for="pickup">Punto de partida</label>
-                        <select id="pickup"></select>
-
+                        <select id="pickup">
+                            <option value="Universidad La Sabana">Universidad La Sabana</option>
+                            <option value="Boyacá">Boyacá</option>
+                        </select>
+                    
                         <label for="destination">Punto de llegada</label>
-                        <select id="destination"></select>
-
+                        <select id="destination">
+                            <option value="Universidad La Sabana">Universidad La Sabana</option>
+                            <option value="Boyacá">Boyacá</option>
+                        </select>
+                    
                         <label for="seats">Cupos disponibles</label>
                         <input type="number" id="seats" placeholder="Cupos disponibles" min="1" max="7">
-                        
+                    
                         <button type="button" onclick="confirmNewTrip()">Nuevo Viaje</button>
                     </form>
-                    <button type="button" onclick="goBackToRoutes()">Volver</button>
+                    <button type="button" onclick="goBackToRoutes()">Volver</button>                    
                 </div>
 
                 <!-- Trip Confirmation View -->
@@ -92,6 +98,6 @@
             </div>
         </div>
     </div>
-    <script src="../js/script9.js"></script>
+    <script type="module" src="../js/script9.js"></script>
 </body>
 </html>

@@ -1,5 +1,6 @@
 {
     "rewrites": [
+      { "source": "/", "destination": "/Login-app/frontend/html/index.html" },
       { "source": "/login", "destination": "/login-app/frontend/html/index5.html" },
       { "source": "/register", "destination": "/login-app/frontend/html/index2.html" },
       { "source": "/home/pasajero", "destination": "/login-app/frontend/html/index6.html" },

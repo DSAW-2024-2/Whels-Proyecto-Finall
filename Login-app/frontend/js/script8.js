@@ -13,18 +13,16 @@ document.addEventListener('click', function(event) {
     const isClickOnMenuIcon = event.target.classList.contains('menu-icon');
     const isClickOnUserIcon = event.target.classList.contains('user-icon');
 
-    // Cierra el menú de navegación si el clic es fuera de él y no en el icono
     if (!isClickInsideNavMenu && !isClickOnMenuIcon) {
         navMenu.classList.remove('active');
     }
 
-    // Cierra el menú de usuario si el clic es fuera de él y no en el icono
     if (!isClickInsideUserMenu && !isClickOnUserIcon) {
         userMenu.classList.remove('active');
     }
 });
 
-
+// Funciones principales para manejar las vistas
 
 function showTrips(routeName) {
     document.getElementById('route-selection').classList.remove('active');
@@ -80,3 +78,15 @@ function goBackToHome() {
     document.getElementById('my-reservations').classList.remove('active');
     document.getElementById('route-selection').classList.add('active');
 }
+
+// Exponer funciones al ámbito global si se utiliza con type="module"
+window.showTrips = showTrips;
+window.showTripDetails = showTripDetails;
+window.confirmReservation = confirmReservation;
+window.makeReservation = makeReservation;
+window.goBack = goBack;
+window.goBackToTrips = goBackToTrips;
+window.goToHome = goToHome;
+window.confirmCancellation = confirmCancellation;
+window.cancelReservation = cancelReservation;
+window.goBackToHome = goBackToHome;

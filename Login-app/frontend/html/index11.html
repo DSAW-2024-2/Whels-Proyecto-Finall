@@ -11,6 +11,7 @@
 
 <body>
     <div class="background">
+        
         <div class="main-container">
             <!-- Encabezado -->
             <header>
@@ -43,28 +44,12 @@
                     <button>Cerrar Sesión</button>
                 </div>
             </aside>
+
             <!-- Contenedor principal -->
             <section id="driver-view" class="view">
                 <div class="main-container-view">
-                    <!-- Información del viaje (clickeable para cancelar) -->
-                    <div class="trip-card" onclick="showCancelConfirmation()">
-                        <h3>Lista de pasajeros</h3>
-                        <div class="trip-info">
-                            <img src="../assets/images/city-car-front-view-4490d2.webp" alt="Car Icon" class="car-icon">
-                            <!-- Icono del carro -->
-                            <div>
-                                <p><strong>Universidad Sabana ➔ Calle 153</strong></p>
-                                <p>Tarifa: $$$$</p>
-                                <p>Hora: 15:00</p>
-                                <p>Cupos: 4 = 3</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Lista de pasajeros -->
-                    <div id="passenger-list-container">
-                        <!-- Las tarjetas de pasajeros se generarán aquí mediante JavaScript -->
-                    </div>
+                    <h3>Lista de Viajes</h3>
+                    <div id="passenger-list-container"></div>
                 </div>
             </section>
 
@@ -73,24 +58,15 @@
                 <div class="modal-content">
                     <p>¿Estás seguro de que quieres cancelar este viaje?</p>
                     <div class="modal-buttons">
-                        <button class="confirm-btn" onclick="confirmCancellation()">Sí</button>
-                        <button class="deny-btn" onclick="closeModal()">No</button>
+                        <button class="confirm-btn">Sí</button>
+                        <button class="deny-btn">No</button>
                     </div>
                 </div>
             </div>
-
-            <!-- Mensaje de Cancelación Exitosa -->
-            <div id="cancel-success" class="modal hidden">
-                <div class="modal-content">
-                    <p>El viaje ha sido cancelado con éxito.</p>
-                    <span class="checkmark">✔️</span>
-                </div>
-            </div>
-
         </div>
     </div>
 
-    <script src="../js/script11.js"></script>
+    <script type="module" src="../js/script11.js"></script>
 </body>
 
 </html>

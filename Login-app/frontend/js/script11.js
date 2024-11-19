@@ -1,101 +1,111 @@
-// Datos de ejemplo de los pasajeros
-const passengers = [
-    { parada: "Calle 153", nombre: "Pasajero A", telefono: "3000000001" },
-    { parada: "Calle 152", nombre: "Pasajero B", telefono: "3000000002" },
-    { parada: "Calle 151", nombre: "Pasajero C", telefono: "3000000003" }
-];
+import { collection, getDocs, deleteDoc, doc } from "https://www.gstatic.com/firebasejs/9.1.3/firebase-firestore.js";
+import { db } from "../../Backend/firebaseConfig.js";
 
-// Función para renderizar la lista de pasajeros en el contenedor
-function renderPassengerList() {
-    const container = document.getElementById('passenger-list-container');
+let currentTripId = null; // Variable global para almacenar el ID del viaje seleccionado
 
-    passengers.forEach(passenger => {
-        // Crear la tarjeta de cada pasajero
-        const passengerCard = document.createElement('div');
-        passengerCard.classList.add('passenger-card');
+// Función para cargar y mostrar la lista de viajes desde Firestore
+async function loadTrips() {
+    try {
+        const tripCollection = collection(db, "trips");
+        const tripSnapshot = await getDocs(tripCollection);
 
-        // Ícono del pasajero
-        const icon = document.createElement('span');
-        icon.classList.add('passenger-icon');
-        icon.innerHTML = "&#128100;"; // Icono de pasajero
+        const container = document.getElementById('passenger-list-container');
+        container.innerHTML = ''; // Limpiar contenedor antes de renderizar
 
-        // Detalles del pasajero
-        const details = document.createElement('div');
-        details.classList.add('passenger-details');
-        details.innerHTML = `
-            <p><strong>Parada:</strong> ${passenger.parada}</p>
-            <p><strong>Nombre:</strong> ${passenger.nombre}</p>
-            <p><strong>Teléfono:</strong> ${passenger.telefono}</p>
-        `;
+        tripSnapshot.forEach(docSnapshot => {
+            const trip = docSnapshot.data();
+            const tripId = docSnapshot.id; // ID del documento Firestore
 
-        // Agregar el ícono y los detalles a la tarjeta de pasajero
-        passengerCard.appendChild(icon);
-        passengerCard.appendChild(details);
+            // Crear una tarjeta para cada viaje
+            const tripCard = document.createElement('div');
+            tripCard.classList.add('trip-card');
+            tripCard.setAttribute('data-id', tripId);
 
-        // Agregar la tarjeta de pasajero al contenedor
-        container.appendChild(passengerCard);
-    });
+            tripCard.innerHTML = `
+                <div class="trip-info">
+                    <p><strong>Ruta:</strong> ${trip.pickup} ➔ ${trip.destination}</p>
+                    <p><strong>Cupos:</strong> ${trip.seats}</p>
+                    <p><strong>Conductor:</strong> ${trip.driverId}</p>
+                    <p><strong>Fecha:</strong> ${new Date(trip.timestamp).toLocaleString()}</p>
+                </div>
+            `;
+
+            // Añadir evento para mostrar modal al hacer clic
+            tripCard.addEventListener('click', () => {
+                console.log(`Clic detectado en el viaje con ID: ${tripId}`);
+                confirmCancellation(tripId); // Llamar al modal
+            });
+
+            // Agregar la tarjeta al contenedor
+            container.appendChild(tripCard);
+        });
+
+        if (tripSnapshot.empty) {
+            container.innerHTML = '<p>No hay viajes creados.</p>';
+        }
+    } catch (error) {
+        console.error("Error al cargar los viajes:", error);
+        alert("Error al cargar los viajes. Consulta la consola para más detalles.");
+    }
 }
 
-// Llamar a la función para renderizar la lista de pasajeros cuando se carga la página
-renderPassengerList();
-
-// Función para mostrar el modal de confirmación de cancelación
-function showCancelConfirmation() {
-    document.getElementById("cancel-confirmation").classList.remove("hidden");
-    document.getElementById("cancel-confirmation").classList.add("visible");
+// Función para mostrar el modal de confirmación
+function confirmCancellation(tripId) {
+    currentTripId = tripId; // Guardar el ID del viaje seleccionado
+    const modal = document.getElementById('cancel-confirmation');
+    modal.classList.remove('hidden'); // Mostrar el modal
+    console.log(`Modal mostrado para el viaje con ID: ${tripId}`);
 }
 
-// Confirmar la cancelación del viaje
-function confirmCancellation() {
-    closeModal();
-
-    // Ocultar la tarjeta principal de viaje y la lista de pasajeros
-    document.querySelector(".trip-card").style.display = "none";
-    document.getElementById("passenger-list-container").style.display = "none";
-
-    // Mostrar mensaje de éxito
-    document.getElementById("cancel-success").classList.remove("hidden");
-    document.getElementById("cancel-success").classList.add("visible");
-
-    // Ocultar el mensaje de éxito después de 2 segundos
-    setTimeout(() => {
-        document.getElementById("cancel-success").classList.remove("visible");
-        document.getElementById("cancel-success").classList.add("hidden");
-    }, 2000);
+// Función para eliminar un viaje de Firestore
+async function deleteTrip() {
+    try {
+        console.log(`Eliminando viaje con ID: ${currentTripId}`);
+        await deleteDoc(doc(db, "trips", currentTripId));
+        closeModal(); // Cerrar modal después de eliminar
+        alert("El viaje ha sido eliminado con éxito.");
+        loadTrips(); // Recargar los viajes
+    } catch (error) {
+        console.error("Error al eliminar el viaje:", error);
+        alert("Error al eliminar el viaje. Consulta la consola para más detalles.");
+    }
 }
 
-// Cerrar el modal activo
+// Función para cerrar el modal
 function closeModal() {
-    document.querySelectorAll(".modal").forEach(modal => {
-        modal.classList.remove("visible");
-        modal.classList.add("hidden");
-    });
+    const modal = document.getElementById("cancel-confirmation");
+    modal.classList.add("hidden"); // Oculta el modal
 }
 
+// Evento al cargar la página para configurar botones y cargar los viajes
+document.addEventListener("DOMContentLoaded", () => {
+    // Carga los viajes al iniciar la página
+    loadTrips();
 
-// Función para alternar la visibilidad de un menú
+    // Asigna la función de cerrar modal al botón de "No"
+    document.querySelector(".deny-btn").addEventListener("click", closeModal);
+});
+
+// Función para alternar la visibilidad de un menú (hamburguesa)
 function toggleMenu(menuId) {
     const menu = document.getElementById(menuId);
-    menu.classList.toggle('active');
+    menu.classList.toggle("active");
 }
 
-// Evento para cerrar los menús cuando se hace clic fuera de ellos
-document.addEventListener('click', function(event) {
-    const navMenu = document.getElementById('navMenu');
-    const userMenu = document.getElementById('userMenu');
+// Evento para cerrar los menús al hacer clic fuera de ellos
+document.addEventListener("click", function (event) {
+    const navMenu = document.getElementById("navMenu");
+    const userMenu = document.getElementById("userMenu");
     const isClickInsideNavMenu = navMenu.contains(event.target);
     const isClickInsideUserMenu = userMenu.contains(event.target);
-    const isClickOnMenuIcon = event.target.classList.contains('menu-icon');
-    const isClickOnUserIcon = event.target.classList.contains('user-icon');
+    const isClickOnMenuIcon = event.target.classList.contains("menu-icon");
+    const isClickOnUserIcon = event.target.classList.contains("user-icon");
 
-    // Cierra el menú de navegación si el clic es fuera de él y no en el icono
     if (!isClickInsideNavMenu && !isClickOnMenuIcon) {
-        navMenu.classList.remove('active');
+        navMenu.classList.remove("active");
     }
 
-    // Cierra el menú de usuario si el clic es fuera de él y no en el icono
     if (!isClickInsideUserMenu && !isClickOnUserIcon) {
-        userMenu.classList.remove('active');
+        userMenu.classList.remove("active");
     }
 });

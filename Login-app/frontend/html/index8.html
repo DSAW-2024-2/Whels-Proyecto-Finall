@@ -62,13 +62,7 @@
                 <div id="trip-available" class="view hidden">
                     <h2>Viajes Disponibles</h2>
                     <ul class="trip-list">
-                        <li onclick="showTripDetails()">
-                            <img src="../assets/images/city-car-front-view-4490d2.webp" alt="Car">
-                            <div>
-                                <p>Calle 169 # Universidad Sabana</p>
-                                <p>Hora: 15:00 - Cupos: 4</p>
-                            </div>
-                        </li>
+                        <!-- Los viajes se generarán dinámicamente aquí -->
                     </ul>
                     <button onclick="goBack()">Volver</button>
                 </div>
@@ -76,9 +70,9 @@
                 <!-- Trip Details View -->
                 <div id="trip-details" class="view hidden">
                     <h2>Detalle del Viaje</h2>
-                    <p>Ruta: Calle 169 # Universidad Sabana</p>
-                    <p>Hora: 15:00</p>
-                    <p>Cupos disponibles: 4</p>
+                    <div id="trip-details-content">
+                        <!-- Los detalles se generarán dinámicamente aquí -->
+                    </div>
                     <button onclick="confirmReservation()">Reservar</button>
                     <button onclick="goBackToTrips()">Volver</button>
                 </div>
@@ -100,13 +94,7 @@
                 <div id="my-reservations" class="view hidden">
                     <h2>Mis Reservas</h2>
                     <ul class="reservation-list">
-                        <li onclick="confirmCancellation()">
-                            <div>
-                                <p>Ruta: Calle 169 # Universidad Sabana</p>
-                                <p>Hora: 15:00</p>
-                            </div>
-                            <button>Cancelar</button>
-                        </li>
+                        <!-- Las reservas se generarán dinámicamente aquí -->
                     </ul>
                     <button onclick="goBackToHome()">Volver al inicio</button>
                 </div>
@@ -127,8 +115,7 @@
         </div>
     </div>
 
-    <!-- JavaScript for toggling menus -->
-    <script src="../js/script8.js"></script>
+    <script type="module" src="../js/script8.js"></script>
     <script>
         function toggleMenu(menuId) {
             document.getElementById(menuId).classList.toggle('active');
